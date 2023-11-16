@@ -3,7 +3,7 @@ import logo from './assets/search.svg'
 
 export default function Navbar() {
     return (
-        <div>
+        <div className='bg-gray-900'>
             <div className='flex justify-between items-center p-5'>
                 <div>
                     <div className='text-xl font-semibold text-white'>
