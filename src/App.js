@@ -4,7 +4,7 @@ import MoviesList from './Components/MoviesList';
 import Navbar from './Components/Navbar';
 
 function App() {
-  fetch();
+  let f = fetch();
   return (
     <div className="">
       <Navbar />
