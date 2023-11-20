@@ -42,7 +42,7 @@ function App() {
     <div className="">
       <Navbar onSearch={handlesearch} />
       <MoviesList movies={movies} />
-      <FavouritesList />
+      <FavouritesList movies={movies} />
     </div>
   );
 }
