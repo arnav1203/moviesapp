@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 import FavouritesList from './Components/FavouritesList';
 import MoviesList from './Components/MoviesList';
@@ -12,11 +13,18 @@ function App() {
       'Content-Type': 'application/json',
     }
   }
-  );
+  )
   const responseJson = response.json();
+  console.log(responseJson.data);
+  const [searchdata, setsearchdata] = useState('')
+  const handlesearch = (searchvalue) => {
+    setsearchdata(searchvalue);
+  }
+  console.log(searchdata);
   return (
     <div className="">
       <Navbar onSearch={handlesearch} />
+
       <MoviesList />
       <FavouritesList />
     </div>
