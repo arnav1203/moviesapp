@@ -16,7 +16,7 @@ function App() {
   const responseJson = response.json();
   return (
     <div className="">
-      <Navbar />
+      <Navbar onSearch={handlesearch} />
       <MoviesList />
       <FavouritesList />
     </div>

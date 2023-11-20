@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from './assets/search.svg'
 
-export default function Navbar() {
+export default function Navbar({ onSearch }) {
+    const [searchvalue, setsearchvalue] = useState('');
+    const setsearch = (e) => {
+        setsearchvalue(e.target.value);
+    }
+    const handlesearch = () => {
+        onSearch(searchvalue);
+    }
     return (
         <div className='bg-gray-900'>
             <div className='flex justify-between items-center p-5'>
@@ -14,8 +21,8 @@ export default function Navbar() {
 
                     <div className='flex justify-end'>
                         <label className='flex'>
-                            <input className='flex rounded-lg placeholder:p-2 p-1 bg-gray-200' placeholder='Search' />
-                            <button><img src={logo} className='mx-2' /></button>
+                            <input onChange={setsearch} className='flex rounded-lg placeholder:p-2 p-1 bg-gray-200' placeholder='Search' />
+                            <button onClick={handlesearch}><img src={logo} alt='' className='mx-2' /></button>
                         </label>
                     </div>
                     <div className='text-lg font-semibold '>
