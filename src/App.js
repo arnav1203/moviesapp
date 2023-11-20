@@ -1,34 +1,50 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import FavouritesList from './Components/FavouritesList';
 import MoviesList from './Components/MoviesList';
 import Navbar from './Components/Navbar';
 
 function App() {
-  let response = fetch('https://movies-api14.p.rapidapi.com/movies', {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Host': 'movies-api14.p.rapidapi.com',
-      'X-RapidAPI-Key': 'YOUR_API_KEY', // Replace with your actual API key
-      'Content-Type': 'application/json',
-    }
-  }
-  )
-  const responseJson = response.json();
-  console.log(responseJson.data);
   const [searchdata, setsearchdata] = useState('')
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    const fetchMovies = async () => {
+      const url = 'https://movies-api14.p.rapidapi.com/movies';
+
+      const headers = {
+        'X-RapidAPI-Host': 'movies-api14.p.rapidapi.com',
+        'X-RapidAPI-Key': 'bb8c3eab3dmsh524ba6b0abcb951p1635ecjsnb51056eb5b11',
+        'Content-Type': 'application/json',
+      };
+
+      try {
+        const response = await fetch(url, {
+          method: 'GET',
+          headers: headers,
+        });
+        const data = await response.json();
+        setMovies(data.movies);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchMovies();
+  }, []);
   const handlesearch = (searchvalue) => {
     setsearchdata(searchvalue);
-  }
-  console.log(searchdata);
+  };
+  // const responseJson = response.json();
+  // console.log(responseJson.data);
   return (
     <div className="">
       <Navbar onSearch={handlesearch} />
-
-      <MoviesList />
+      <div className='container'>
+        <MoviesList movies={movies} />
+      </div>
       <FavouritesList />
     </div>
   );
 }
-
 export default App;
