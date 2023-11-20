@@ -3,10 +3,11 @@ import './App.css';
 import FavouritesList from './Components/FavouritesList';
 import MoviesList from './Components/MoviesList';
 import Navbar from './Components/Navbar';
-
 function App() {
   const [searchdata, setsearchdata] = useState('')
   const [movies, setMovies] = useState([]);
+  const apikey = process.env.REACT_APP_XRapidAPIKey;
+  console.log(apikey);
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -14,7 +15,7 @@ function App() {
 
       const headers = {
         'X-RapidAPI-Host': 'movies-api14.p.rapidapi.com',
-        'X-RapidAPI-Key': 'bb8c3eab3dmsh524ba6b0abcb951p1635ecjsnb51056eb5b11',
+        'X-RapidAPI-Key': apikey,
         'Content-Type': 'application/json',
       };
 
