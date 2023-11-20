@@ -40,9 +40,7 @@ function App() {
   return (
     <div className="">
       <Navbar onSearch={handlesearch} />
-      <div className='container'>
-        <MoviesList movies={movies} />
-      </div>
+      <MoviesList movies={movies} />
       <FavouritesList />
     </div>
   );

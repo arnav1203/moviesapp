@@ -6,11 +6,22 @@ export default function MoviesList(props) {
             <div className='text-4xl text-white'>
                 MOVIE LIST
             </div>
-            <div className='flex flex-wrap'>
+            <div className='flex flex-nowrap overflow-x-auto'>
                 {props.movies.map((movie, index) =>
-                    <div className='h-72 w-44 p-3' key={index}>
-                        <img src={movie.poster_path} className='h-full w-full object-cover' alt='movie_img'></img>
-                    </div>)}
+                    <div key={index}>
+                        <div className='h-72 w-44 hover:scale-110 p-3'>
+                            <img src={movie.poster_path} className='h-full w-full object-cover' alt='movie_img'></img>
+                        </div>
+                        <div className='space-y-2'>
+                            <div className='text-white'>
+                                {movie.title}
+                            </div>
+                            <div className='text-white'>
+                                {new Date(movie.release_date).getFullYear()}
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     )
