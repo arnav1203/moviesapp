@@ -6,9 +6,9 @@ import Navbar from './Components/Navbar';
 function App() {
   const [searchdata, setsearchdata] = useState('')
   const [movies, setMovies] = useState([]);
+  const [found, setfound] = useState([]);
   const apikey = process.env.REACT_APP_XRapidAPIKey;
   // console.log(apikey);
-
   useEffect(() => {
     const fetchMovies = async () => {
       const url = 'https://movies-api14.p.rapidapi.com/movies';
@@ -30,18 +30,22 @@ function App() {
         console.error('Error fetching data:', error);
       }
     };
-
+    const filtered_movies = movies.find((movie) => movie.title.toLowerCase() === searchdata.toLowerCase
+      ());
+    setfound(filtered_movies);
+    // console.log(filtered_movies);
     fetchMovies();
-  }, []);
+  }, [searchdata]);
   const handlesearch = (searchvalue) => {
     setsearchdata(searchvalue);
   };
+  // console.log(found);
   // const responseJson = response.json();
   // console.log(responseJson.data);
   return (
     <div className="">
       <Navbar onSearch={handlesearch} />
-      <MoviesList movies={movies} />
+      <MoviesList movies={found} />
       <FavouritesList movies={movies} />
     </div>
   );
