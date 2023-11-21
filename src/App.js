@@ -7,7 +7,7 @@ function App() {
   const [searchdata, setsearchdata] = useState('')
   const [movies, setMovies] = useState([]);
   const apikey = process.env.REACT_APP_XRapidAPIKey;
-  console.log(apikey);
+  // console.log(apikey);
 
   useEffect(() => {
     const fetchMovies = async () => {
