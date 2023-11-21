@@ -6,7 +6,7 @@ export default function FavouritesList(props) {
             <div className='text-4xl text-white'>
                 FAVOURITES
             </div>
-            <div className='flex flex-nowrap overflow-x-auto mr-5'>
+            <div className='flex flex-nowrap overflow-x-auto no-scrollbar mr-5'>
                 {props.movies.map((movie, index) =>
                     <div key={index}>
                         <div className='h-72 w-44 hover:scale-110 p-3'>
