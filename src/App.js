@@ -30,12 +30,17 @@ function App() {
         console.error('Error fetching data:', error);
       }
     };
+
+
     const filtered_movies = movies.find((movie) => movie.title.toLowerCase() === searchdata.toLowerCase
       ());
+
     setfound(filtered_movies);
     // console.log(filtered_movies);
     fetchMovies();
   }, [searchdata]);
+
+
   const handlesearch = (searchvalue) => {
     setsearchdata(searchvalue);
   };

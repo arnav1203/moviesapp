@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 export default function MoviesList(props) {
     useEffect(() => {
         console.log(props.movies)
-        if (props.movies != undefined)
+        if (props.movies !== undefined)
             console.log(props.movies.length)
 
     }, [props])
