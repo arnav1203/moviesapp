@@ -19,6 +19,7 @@ function App() {
         'Content-Type': 'application/json',
       };
 
+
       try {
         const response = await fetch(url, {
           method: 'GET',
