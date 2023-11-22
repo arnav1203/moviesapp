@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import FavouritesList from './Components/FavouritesList';
 import MoviesList from './Components/MoviesList';
 import Navbar from './Components/Navbar';
+import Details from './Components/Details';
+
+
 function App() {
   const [searchdata, setsearchdata] = useState('')
   const [movies, setMovies] = useState([]);
@@ -49,11 +53,17 @@ function App() {
   // const responseJson = response.json();
   // console.log(responseJson.data);
   return (
-    <div className="">
-      <Navbar onSearch={handlesearch} />
-      <MoviesList movies={found} />
-      <FavouritesList movies={movies} />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path='/' element={<div>
+            <Navbar onSearch={handlesearch} />
+            <MoviesList movies={found} />
+            <FavouritesList movies={movies} />
+          </div>} />
+        <Route path='/details' element={<Details />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 export default App;
