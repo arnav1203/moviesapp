@@ -39,8 +39,13 @@ function App() {
 
     const filtered_movies = movies.find((movie) => movie.title.toLowerCase() === searchdata.toLowerCase
       ());
+    if (filtered_movies == null) {
+      setfound(movies);
+    }
+    else {
 
-    setfound(filtered_movies);
+      setfound(filtered_movies);
+    }
     // console.log(filtered_movies);
     fetchMovies();
   }, [searchdata]);
