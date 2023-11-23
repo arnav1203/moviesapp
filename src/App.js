@@ -16,7 +16,7 @@ function App() {
   // console.log(apikey);
   useEffect(() => {
     const fetchMovies = async () => {
-      const url = 'https://movies-api14.p.rapidapi.com/movie/27205';
+      const url = 'https://movies-api14.p.rapidapi.com/movies';
 
       const headers = {
         'X-RapidAPI-Host': 'movies-api14.p.rapidapi.com',
@@ -31,7 +31,7 @@ function App() {
           headers: headers,
         });
         const data = await response.json();
-        setMovies(data);
+        setMovies(data.movies);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -71,7 +71,7 @@ function App() {
             <MoviesList movies={movies} onSearch={handleclick} />
             <FavouritesList movies={movies} onSearch={handleclick} />
           </div>} />
-        <Route path='/details' element={<Details movies={movies} />} />
+        <Route path='/details' element={<Details movies={click} />} />
       </Routes>
     </BrowserRouter>
   );
