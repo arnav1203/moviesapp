@@ -63,10 +63,10 @@ function App() {
         <Route
           path='/' element={<div>
             <Navbar onSearch={handlesearch} />
-            <MoviesList movies={found} />
+            <MoviesList movies={movies} />
             <FavouritesList movies={movies} />
           </div>} />
-        <Route path='/details' element={<Details />} />
+        <Route path='/details' element={<Details movies={movies} />} />
       </Routes>
     </BrowserRouter>
   );
