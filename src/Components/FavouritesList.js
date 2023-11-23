@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function FavouritesList(props) {
     const navigate = useNavigate();

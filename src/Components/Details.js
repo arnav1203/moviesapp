@@ -5,7 +5,7 @@ export default function Details(item) {
         console.log(item)
     })
     return (
-        <div className='h-screen'>
+        <div className=''>
             <div className='no-scrollbar mr-5'>
                 {/* {props.movies.map((movie, index) => */}
                 <div className='flex mt-24 ml-24'>

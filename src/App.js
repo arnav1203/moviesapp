@@ -44,7 +44,6 @@ function App() {
       setfound(movies);
     }
     else {
-
       setfound(filtered_movies);
     }
     // console.log(filtered_movies);
@@ -69,7 +68,7 @@ function App() {
         <Route
           path='/' element={<div>
             <Navbar onSearch={handlesearch} />
-            <MoviesList movies={movies} />
+            <MoviesList movies={movies} onSearch={handleclick} />
             <FavouritesList movies={movies} onSearch={handleclick} />
           </div>} />
         <Route path='/details' element={<Details movies={click} />} />
