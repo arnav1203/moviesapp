@@ -11,6 +11,7 @@ function App() {
   const [searchdata, setsearchdata] = useState('')
   const [movies, setMovies] = useState([]);
   const [found, setfound] = useState([]);
+  const [click, setclick] = useState([]);
   const apikey = process.env.REACT_APP_XRapidAPIKey;
   // console.log(apikey);
   useEffect(() => {
@@ -57,6 +58,11 @@ function App() {
   // console.log(found);
   // const responseJson = response.json();
   // console.log(responseJson.data);
+
+  const handleclick = (movie) => {
+    setclick(movie);
+  }
+
   return (
     <BrowserRouter>
       <Routes>
@@ -64,9 +70,9 @@ function App() {
           path='/' element={<div>
             <Navbar onSearch={handlesearch} />
             <MoviesList movies={movies} />
-            <FavouritesList movies={movies} />
+            <FavouritesList movies={movies} onSearch={handleclick} />
           </div>} />
-        <Route path='/details' element={<Details movies={movies} />} />
+        <Route path='/details' element={<Details movies={click} />} />
       </Routes>
     </BrowserRouter>
   );
