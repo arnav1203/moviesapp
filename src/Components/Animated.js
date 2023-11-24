@@ -1,26 +1,17 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
-export default function MoviesList(props) {
-    const { onSearch } = props;
+export default function Animated(props) {
     const navigate = useNavigate();
-
-    // useEffect(() => {
-    //     console.log(props.movies)
-    //     if (props.movies !== undefined)
-    //         console.log(props.movies.length)
-
-    // }, [props])
-
+    const { onSearch } = props;
     const handleclick = (movie) => {
         onSearch(movie);
-        console.log(movie);
         navigate('/details')
     }
     return (
         <div className='mt-10 ml-4'>
             <div className='text-4xl text-white'>
-                Trending
+                ANIMATED MOVIES
             </div>
             <div className='flex flex-nowrap overflow-x-auto no-scrollbar mr-5'>
                 {props.movies.map((movie, index) =>

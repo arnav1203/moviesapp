@@ -11,7 +11,7 @@ export default function FavouritesList(props) {
     return (
         <div className='mt-10 ml-4'>
             <div className='text-4xl text-white'>
-                FAVOURITES
+                NEW MOVIES
             </div>
             <div className='flex flex-nowrap overflow-x-auto no-scrollbar mr-5'>
                 {props.movies.map((movie, index) =>

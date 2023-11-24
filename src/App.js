@@ -3,20 +3,27 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import FavouritesList from './Components/FavouritesList';
 import MoviesList from './Components/MoviesList';
+import Animated from './Components/Animated';
 import Navbar from './Components/Navbar';
 import Details from './Components/Details';
 
 
 function App() {
   const [searchdata, setsearchdata] = useState('')
-  const [movies, setMovies] = useState([]);
+
+  const [trend, settrend] = useState([]);
+  const [newm, setnewm] = useState([]);
+  const [anim, setanim] = useState([]);
+
   const [found, setfound] = useState([]);
   const [click, setclick] = useState([]);
   const apikey = process.env.REACT_APP_XRapidAPIKey;
   // console.log(apikey);
+
+
   useEffect(() => {
     const fetchMovies = async () => {
-      const url = 'https://movies-api14.p.rapidapi.com/movies';
+      const url = 'https://movies-api14.p.rapidapi.com/home';
 
       const headers = {
         'X-RapidAPI-Host': 'movies-api14.p.rapidapi.com',
@@ -30,22 +37,35 @@ function App() {
           method: 'GET',
           headers: headers,
         });
+
+
         const data = await response.json();
-        setMovies(data.movies);
+
+
+        const trending = data.find(entry => entry.title === 'Trending Movies')
+        const newmovies = data.find(entry => entry.title === 'New Movies')
+        const animated = data.find(entry => entry.title === 'Best Animation Movies')
+
+
+        settrend(trending.movies);
+        setnewm(newmovies.movies);
+        setanim(animated.movies);
+
+        // console.log(trending.movies);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
 
 
-    const filtered_movies = movies.find((movie) => movie.title.toLowerCase() === searchdata.toLowerCase
-      ());
-    if (filtered_movies == null) {
-      setfound(movies);
-    }
-    else {
-      setfound(filtered_movies);
-    }
+    // const filtered_movies = movies.find((movie) => movie.title.toLowerCase() === searchdata.toLowerCase
+    //   ());
+    // if (filtered_movies == null) {
+    //   setfound(movies);
+    // }
+    // else {
+    //   setfound(filtered_movies);
+    // }
     // console.log(filtered_movies);
     fetchMovies();
   }, [searchdata]);
@@ -68,8 +88,9 @@ function App() {
         <Route
           path='/' element={<div>
             <Navbar onSearch={handlesearch} />
-            <MoviesList movies={movies} onSearch={handleclick} />
-            <FavouritesList movies={movies} onSearch={handleclick} />
+            <MoviesList movies={trend} onSearch={handleclick} />
+            <FavouritesList movies={newm} onSearch={handleclick} />
+            <Animated movies={anim} onSearch={handleclick} />
           </div>} />
         <Route path='/details' element={<Details movies={click} />} />
       </Routes>
