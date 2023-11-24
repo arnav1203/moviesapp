@@ -15,6 +15,7 @@ export default function MoviesList(props) {
     const handleclick = (movie) => {
         onSearch(movie);
         console.log(movie);
+        console.log(movie._id)
         navigate('/details')
     }
     return (

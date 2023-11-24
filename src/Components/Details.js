@@ -6,7 +6,7 @@ export default function Details(item) {
     const [detail, setdetail] = useState([]);
     useEffect(() => {
         console.log(item)
-        // console.log(item.movies._id)
+        console.log(item.movies._id)
         setselect(item.movies._id)
         const apikey = process.env.REACT_APP_XRapidAPIKey;
 
@@ -30,11 +30,12 @@ export default function Details(item) {
                 const data = await response.json();
                 // console.log(data.movie._id);
                 setdetail(data);
+                console.log(data.movie)
                 // console.log(trending.movies);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
-        };
+        }
         fetchMovies();
         console.log(detail.movie._id);
     }, [item])
@@ -58,7 +59,10 @@ export default function Details(item) {
                             Release Date: {item.movies.release_date}
                         </div>
                         <div>
-                            {detail.movie.youtube_trailer}
+                            {/* <video>
+                                <source src={detail.movie.youtube_trailer} />
+                                Sorry your browser doesn't support videos.
+                            </video> */}
                         </div>
                     </div>
                 </div>
