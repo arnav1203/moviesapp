@@ -46,7 +46,7 @@ export default function Details(item) {
             <Navbar />
             <div className='no-scrollbar mr-5'>
                 {/* {props.movies.map((movie, index) => */}
-                <div className=' mt-10 ml-24 '>
+                <div className=' mt-10 mx-24 '>
                     <div className='h-full w-full flex justify-center p-3'>
                         <img src={item.movies.backdrop_path} className='h-full w-2/3 object-contain' alt='movie_img' />
                     </div>
@@ -62,9 +62,9 @@ export default function Details(item) {
                         </div>
                     </div>
                     {detail && detail.movie && (
-                        <div className='h-96'>
+                        <div className='h-[800px] py-8 w-full'>
                             {/* {detail.movie.youtube_trailer} */}
-                            <ReactPlayer url={detail.movie.youtube_trailer} />
+                            <ReactPlayer url={detail.movie.youtube_trailer} width='100%' height='100%' />
                         </div>
                     )}
                 </div>
