@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
+import ReactPlayer from 'react-player';
 
 export default function Details(item) {
     const [detail, setdetail] = useState([]);
+    const link = detail.movie.youtube_trailer;
+    console.log(link);
     useEffect(() => {
         console.log(item)
         console.log(item.movies._id)
@@ -61,10 +64,6 @@ export default function Details(item) {
                         </div>
                         {detail && detail.movie && (
                             <div>
-                                {/* <video>
-                                <source src={detail.movie.youtube_trailer} />
-                                Sorry your browser doesn't support videos.
-                            </video> */}
                                 {detail.movie.youtube_trailer}
                             </div>
                         )}
