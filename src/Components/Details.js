@@ -62,7 +62,7 @@ export default function Details(item) {
                         </div>
                     </div>
                     {detail && detail.movie && (
-                        <div className='h-[800px] py-8 w-full'>
+                        <div className='lg:h-[800px] h-96 py-8 '>
                             {/* {detail.movie.youtube_trailer} */}
                             <ReactPlayer url={detail.movie.youtube_trailer} width='100%' height='100%' />
                         </div>
