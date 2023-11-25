@@ -60,13 +60,13 @@ export default function Details(item) {
                         <div className=' text-white'>
                             Release Date: {item.movies.release_date}
                         </div>
-                        {detail && detail.movie && (
-                            <div>
-                                {/* {detail.movie.youtube_trailer} */}
-                                <ReactPlayer url={detail.movie.youtube_trailer} />
-                            </div>
-                        )}
                     </div>
+                    {detail && detail.movie && (
+                        <div className='h-96'>
+                            {/* {detail.movie.youtube_trailer} */}
+                            <ReactPlayer url={detail.movie.youtube_trailer} />
+                        </div>
+                    )}
                 </div>
                 {/* )} */}
             </div>

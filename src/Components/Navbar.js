@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
 import logo from './assets/search.svg'
+import { useNavigate } from 'react-router-dom';
 
 export default function Navbar({ onSearch }) {
     const [searchvalue, setsearchvalue] = useState('');
     const [searchbar, setsearchbar] = useState(false);
+
+    const navigate = useNavigate();
+
     const setsearch = (e) => {
         setsearchvalue(e.target.value);
     }
@@ -16,6 +20,9 @@ export default function Navbar({ onSearch }) {
             setsearchbar(true);
         else
             setsearchbar(false);
+    }
+    const navhome = () => {
+        navigate('/')
     }
     return (
         <div className='bg-gray-900'>
@@ -35,7 +42,7 @@ export default function Navbar({ onSearch }) {
                         </label>
                     </div>
                     <div className='text-lg font-semibold hidden md:flex '>
-                        <button className='bg-clip-text text-transparent bg-white hover:scale-110'>
+                        <button className='bg-clip-text text-transparent bg-white hover:scale-110' onClick={navhome}>
                             HOME
                         </button>
                     </div>
