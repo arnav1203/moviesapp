@@ -5,12 +5,6 @@ export default function MoviesList(props) {
     const { onSearch } = props;
     const navigate = useNavigate();
 
-    // useEffect(() => {
-    //     console.log(props.movies)
-    //     if (props.movies !== undefined)
-    //         console.log(props.movies.length)
-
-    // }, [props])
 
     const handleclick = (movie) => {
         onSearch(movie);
