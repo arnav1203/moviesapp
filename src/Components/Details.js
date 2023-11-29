@@ -47,18 +47,20 @@ export default function Details(item) {
             <div className='no-scrollbar mr-5'>
                 {/* {props.movies.map((movie, index) => */}
                 <div className=' mt-10 mx-24 '>
-                    <div className='h-full w-full flex justify-center p-3'>
-                        <img src={item.movies.backdrop_path} className='h-full w-2/3 object-contain' alt='movie_img' />
-                    </div>
-                    <div className='space-y-5 w-1/3'>
-                        <div className='text-3xl text-white underline'>
-                            {item.movies.title}
+                    <div>
+                        <div className='h-full w-full flex justify-center p-3'>
+                            <img src={item.movies.backdrop_path} className='h-full w-2/3 object-contain' alt='movie_img' />
                         </div>
-                        <div className='text-white'>
-                            {item.movies.overview}
-                        </div>
-                        <div className=' text-white'>
-                            Release Date: {item.movies.release_date}
+                        <div className='space-y-5 w-1/3'>
+                            <div className='text-3xl text-white underline'>
+                                {item.movies.title}
+                            </div>
+                            <div className='text-white'>
+                                {item.movies.overview}
+                            </div>
+                            <div className=' text-white'>
+                                Release Date: {item.movies.release_date}
+                            </div>
                         </div>
                     </div>
                     {detail && detail.movie && (
