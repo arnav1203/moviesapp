@@ -48,10 +48,18 @@ export default function Details(item) {
                 {/* {props.movies.map((movie, index) => */}
                 <div className=' p-8'>
                     <div className='relative'>
-                        <img src={item.movies.backdrop_path} className='rounded-3xl h-full w-full object-contain' alt='movie_img' />
-                        <div className='absolute inset-0 space-y-5 w-1/3'>
-                            <div className='text-3xl text-white underline'>
+                        <img src={item.movies.backdrop_path} className='rounded-3xl h-full w-full object-contain' alt='movie_img' style={{
+                            WebkitMaskImage: 'linear-gradient(to right, transparent, black 90%)',
+                            maskImage: 'linear-gradient(to right, transparent, black 50%)'
+                        }} />
+                        <div className='absolute inset-8 space-y-5 w-1/3'>
+                            <div className='text-4xl text-white'>
                                 {item.movies.title}
+                            </div>
+                            <div className='grid grid-cols-3 gap-0 text-white'>
+                                {detail.movie.genres.map((genre, index) => (
+                                    <div key={index} className='w-fit'>{genre}</div>
+                                ))}
                             </div>
                             <div className='text-white'>
                                 {item.movies.overview}
