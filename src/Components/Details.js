@@ -44,24 +44,23 @@ export default function Details(item) {
     return (
         <div className=''>
             <Navbar />
-            <div className='no-scrollbar mr-5'>
+            <div className='no-scrollbar'>
                 {/* {props.movies.map((movie, index) => */}
-                <div className=' mt-10 mx-24 '>
-                    <div class="relative">
-                        <img src={item.movies.backdrop_path} class="w-full h-auto" alt="movie_img" />
-                        <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white">
-                            <div class="text-3xl underline">
+                <div className=' p-8'>
+                    <div className='relative'>
+                        <img src={item.movies.backdrop_path} className='rounded-3xl h-full w-full object-contain' alt='movie_img' />
+                        <div className='absolute inset-0 space-y-5 w-1/3'>
+                            <div className='text-3xl text-white underline'>
                                 {item.movies.title}
                             </div>
-                            <div class="mt-3">
+                            <div className='text-white'>
                                 {item.movies.overview}
                             </div>
-                            <div class="mt-3">
+                            <div className=' text-white'>
                                 Release Date: {item.movies.release_date}
                             </div>
                         </div>
                     </div>
-
                     {detail && detail.movie && (
                         <div className='lg:h-[800px] h-96 py-8 '>
                             <ReactPlayer url={detail.movie.youtube_trailer} width='100%' height='100%' />
