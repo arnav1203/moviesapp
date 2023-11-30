@@ -16,6 +16,7 @@ function App() {
   const [anim, setanim] = useState([]);
 
   const [found, setfound] = useState([]);
+  const [f, sf] = useState(false);
   const [click, setclick] = useState([]);
   const apikey = process.env.REACT_APP_XRapidAPIKey;
   // console.log(apikey);
@@ -73,6 +74,7 @@ function App() {
 
   const handlesearch = (searchvalue) => {
     setsearchdata(searchvalue);
+    sf(true);
   };
   // console.log(found);
   // const responseJson = response.json();
@@ -88,9 +90,9 @@ function App() {
         <Route
           path='/' element={<div>
             <Navbar onSearch={handlesearch} />
-            <MoviesList movies={trend} onSearch={handleclick} />
-            <FavouritesList movies={newm} onSearch={handleclick} />
-            <Animated movies={anim} onSearch={handleclick} />
+            {f ? '' : <MoviesList movies={trend} onSearch={handleclick} />}
+            {f ? '' : <FavouritesList movies={newm} onSearch={handleclick} />}
+            {f ? '' : <Animated movies={anim} onSearch={handleclick} />}
           </div>} />
         <Route path='/details' element={<Details movies={click} />} />
       </Routes>
