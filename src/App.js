@@ -14,8 +14,6 @@ function App() {
   const [trend, settrend] = useState([]);
   const [newm, setnewm] = useState([]);
   const [anim, setanim] = useState([]);
-
-  const [found, setfound] = useState([]);
   const [f, sf] = useState(false);
   const [click, setclick] = useState([]);
   const apikey = process.env.REACT_APP_XRapidAPIKey;
@@ -45,9 +43,20 @@ function App() {
         if (searchdata) {
           // console.log(searchdata);
           trending = data.find(entry => entry.title === 'Trending Movies')
-          const m = trending.movies.find(entry => entry.title.toLowerCase().includes(searchdata))
+          let m = trending.movies.find(entry => entry.title.toLowerCase().includes(searchdata))
+          if (!m) {
+            trending = data.find(entry => entry.title === 'New Movies')
+            m = trending.movies.find(entry => entry.title.toLowerCase().includes(searchdata))
+          }
+          if (!m) {
+            trending = data.find(entry => entry.title === 'Best Animation Movies')
+            m = trending.movies.find(entry => entry.title.toLowerCase().includes(searchdata))
+          }
           // console.log(m);
-          settrend([m]);
+          if (m)
+            settrend([m]);
+          else
+            console.log("Nothing to Display")
 
         }
         else {
@@ -67,16 +76,6 @@ function App() {
       }
     };
 
-
-    // const filtered_movies = movies.find((movie) => movie.title.toLowerCase() === searchdata.toLowerCase
-    //   ());
-    // if (filtered_movies == null) {
-    //   setfound(movies);
-    // }
-    // else {
-    //   setfound(filtered_movies);
-    // }
-    // console.log(filtered_movies);
     fetchMovies();
   }, [searchdata]);
 
