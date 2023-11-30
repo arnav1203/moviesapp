@@ -27,20 +27,15 @@ export default function Details(item) {
 
 
                 const data = await response.json();
-                // console.log(data.movie._id);
                 setdetail(data);
                 console.log(data.movie._id)
-                // console.log(trending.movies);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
         }
         fetchMovies();
-        // console.log(detail.movie._id);
     }, [item])
-    // useEffect(() => {
-    //     console.log(detail.movie._id)
-    // }, [detail])
+
     return (
         <div className=''>
             <Navbar />
