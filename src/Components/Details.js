@@ -54,15 +54,16 @@ export default function Details(item) {
                         }} />
                         <div className='xl:absolute xl:inset-8  space-y-5 xl:w-1/3'>
                             <div className='xl:pt-40'>
-                                <div className='flex'>
+                                <div className='flex pb-7'>
                                     <p className='text-4xl text-white'>{item.movies.title}</p>
 
                                 </div>
-                                <div className='grid grid-cols-3 gap-0 text-white w-2/3 xl:w-full'>
-                                    {detail.movie.genres.map((genre, index) => (
-                                        <div key={index} className='w-fit'>{genre}</div>
-                                    ))}
-                                </div>
+                                {detail && detail.movie && (
+                                    <div className='grid grid-cols-3 gap-0 text-white w-2/3 xl:w-full'>
+                                        {detail.movie.genres.map((genre, index) => (
+                                            <div key={index} className='w-fit'>{genre}</div>
+                                        ))}
+                                    </div>)}
                                 <div className=' pt-1 text-white'>
                                     {new Date(item.movies.release_date).getFullYear()}
                                 </div>
