@@ -17,7 +17,6 @@ function App() {
   const [f, sf] = useState(false);
   const [click, setclick] = useState([]);
   const apikey = process.env.REACT_APP_XRapidAPIKey;
-  // console.log(apikey);
 
 
   useEffect(() => {
@@ -41,7 +40,6 @@ function App() {
         const data = await response.json();
         let trending;
         if (searchdata) {
-          // console.log(searchdata);
           trending = data.find(entry => entry.title === 'Trending Movies')
           let m = trending.movies.find(entry => entry.title.toLowerCase().includes(searchdata))
           if (!m) {
@@ -52,7 +50,6 @@ function App() {
             trending = data.find(entry => entry.title === 'Best Animation Movies')
             m = trending.movies.find(entry => entry.title.toLowerCase().includes(searchdata))
           }
-          // console.log(m);
           if (m)
             settrend([m]);
           else
@@ -70,7 +67,6 @@ function App() {
         setnewm(newmovies.movies);
         setanim(animated.movies);
 
-        // console.log(trending.movies);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -84,9 +80,6 @@ function App() {
     setsearchdata(searchvalue);
     sf(true);
   };
-  // console.log(found);
-  // const responseJson = response.json();
-  // console.log(responseJson.data);
 
   const handleclick = (movie) => {
     setclick(movie);
