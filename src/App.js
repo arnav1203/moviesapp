@@ -45,7 +45,9 @@ function App() {
         if (searchdata) {
           console.log(searchdata);
           trending = data.find(entry => entry.title === 'Trending Movies')
-          console.log(trending);
+          const m = trending.movies.find(entry => entry.title === searchdata)
+          console.log(m);
+          settrend(m);
 
         }
         else {
