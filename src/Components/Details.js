@@ -82,7 +82,7 @@ export default function Details(item) {
                             <ReactPlayer url={detail.movie.youtube_trailer} width='100%' height='100%' />
                         </div>
                     )}
-
+                    {/* Similar Movies to add */}
                 </div>
                 {/* )} */}
             </div>
