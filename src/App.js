@@ -43,10 +43,10 @@ function App() {
         const data = await response.json();
         let trending;
         if (searchdata) {
-          console.log(searchdata);
+          // console.log(searchdata);
           trending = data.find(entry => entry.title === 'Trending Movies')
-          const m = trending.movies.find(entry => entry.title.toLowerCase() === searchdata)
-          console.log(m);
+          const m = trending.movies.find(entry => entry.title.toLowerCase().includes(searchdata))
+          // console.log(m);
           settrend([m]);
 
         }
