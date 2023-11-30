@@ -45,7 +45,7 @@ function App() {
         if (searchdata) {
           console.log(searchdata);
           trending = data.find(entry => entry.title === 'Trending Movies')
-          const m = trending.movies.find(entry => entry.title === searchdata)
+          const m = trending.movies.find(entry => entry.title.toLowerCase() === searchdata)
           console.log(m);
           settrend([m]);
 
