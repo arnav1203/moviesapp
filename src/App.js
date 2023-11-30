@@ -44,9 +44,9 @@ function App() {
         let trending;
         if (searchdata) {
           console.log(searchdata);
-          trending = await data.find(entry => entry.title === 'Trending Movies')
-          const trd = trending.movies.map()
-          settrend(trd)
+          trending = data.find(entry => entry.title === 'Trending Movies')
+          console.log(trending);
+
         }
         else {
           trending = data.find(entry => entry.title === 'Trending Movies')
