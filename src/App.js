@@ -41,14 +41,21 @@ function App() {
 
 
         const data = await response.json();
-
-
-        const trending = data.find(entry => entry.title === 'Trending Movies')
+        let trending;
+        if (searchdata) {
+          console.log(searchdata);
+          trending = await data.find(entry => entry.title === 'Trending Movies')
+          const trd = trending.movies.map()
+          settrend(trd)
+        }
+        else {
+          trending = data.find(entry => entry.title === 'Trending Movies')
+          settrend(trending.movies);
+        }
         const newmovies = data.find(entry => entry.title === 'New Movies')
         const animated = data.find(entry => entry.title === 'Best Animation Movies')
 
 
-        settrend(trending.movies);
         setnewm(newmovies.movies);
         setanim(animated.movies);
 
@@ -90,7 +97,7 @@ function App() {
         <Route
           path='/' element={<div>
             <Navbar onSearch={handlesearch} />
-            {f ? '' : <MoviesList movies={trend} onSearch={handleclick} />}
+            {<MoviesList movies={trend} onSearch={handleclick} />}
             {f ? '' : <FavouritesList movies={newm} onSearch={handleclick} />}
             {f ? '' : <Animated movies={anim} onSearch={handleclick} />}
           </div>} />
