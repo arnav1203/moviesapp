@@ -39,7 +39,6 @@ export default function Navbar({ onSearch }) {
                             <label className='flex'>
                                 <input onChange={setsearch} className={`flex rounded-lg placeholder:p-2 p-1 bg-gray-200 ${searchbar ? 'flex' : 'hidden'} md:flex`} placeholder='Search' />
                                 <button type='submit' className='mx-2'><img src={logo} alt='' /></button>
-                                {/* <button onClick={handlesearch} className={` ${searchbar ? 'flex' : 'hidden'} mx-2 items-center md:flex`}><img src={logo} alt='' /></button> */}
                             </label>
                         </form>
                     </div>
