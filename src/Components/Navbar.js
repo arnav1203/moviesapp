@@ -35,11 +35,13 @@ export default function Navbar({ onSearch }) {
                 <div className='flex md:w-2/3 justify-around items-center h-7'>
 
                     <div className='flex justify-end'>
-                        <label className='flex'>
-                            <input onChange={setsearch} className={`flex rounded-lg placeholder:p-2 p-1 bg-gray-200 ${searchbar ? 'flex' : 'hidden'} md:flex`} placeholder='Search' />
-                            <button onClick={() => { handlesearchbar(); handlesearch(); }} className='mx-2'><img src={logo} alt='' /></button>
-                            {/* <button onClick={handlesearch} className={` ${searchbar ? 'flex' : 'hidden'} mx-2 items-center md:flex`}><img src={logo} alt='' /></button> */}
-                        </label>
+                        <form onSubmit={(event) => { event.preventDefault(); handlesearchbar(); handlesearch(); }}>
+                            <label className='flex'>
+                                <input onChange={setsearch} className={`flex rounded-lg placeholder:p-2 p-1 bg-gray-200 ${searchbar ? 'flex' : 'hidden'} md:flex`} placeholder='Search' />
+                                <button type='submit' className='mx-2'><img src={logo} alt='' /></button>
+                                {/* <button onClick={handlesearch} className={` ${searchbar ? 'flex' : 'hidden'} mx-2 items-center md:flex`}><img src={logo} alt='' /></button> */}
+                            </label>
+                        </form>
                     </div>
                     <div className='text-lg font-semibold hidden md:flex '>
                         <button className='bg-clip-text text-transparent bg-white hover:scale-110' onClick={navhome}>
