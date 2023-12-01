@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
 import ReactPlayer from 'react-player';
+import { useNavigate } from 'react-router-dom';
 
-export default function Details(item) {
+export default function Details(props) {
+    const { onSearch } = props
+    const navigate = useNavigate();
     const [detail, setdetail] = useState([]);
+
+    const handleclick = (movie) => {
+        onSearch(movie)
+        navigate('/details')
+    }
+
     useEffect(() => {
-        console.log(item)
-        console.log(item.movies._id)
+        console.log(props)
+        console.log(props.movies._id)
         const apikey = process.env.REACT_APP_XRapidAPIKey;
 
         const fetchMovies = async () => {
-            const url = `https://movies-api14.p.rapidapi.com/movie/${item.movies._id}`;
+            const url = `https://movies-api14.p.rapidapi.com/movie/${props.movies._id}`;
 
             const headers = {
                 'X-RapidAPI-Host': 'movies-api14.p.rapidapi.com',
@@ -35,7 +44,7 @@ export default function Details(item) {
             }
         }
         fetchMovies();
-    }, [item])
+    }, [props])
 
     return (
         <div className=''>
@@ -44,14 +53,14 @@ export default function Details(item) {
                 {/* {props.movies.map((movie, index) => */}
                 <div className=' p-8'>
                     <div className='xl:relative'>
-                        <img src={item.movies.backdrop_path} className='rounded-3xl h-full w-full object-contain' alt='movie_img' style={{
+                        <img src={props.movies.backdrop_path} className='rounded-3xl h-full w-full object-contain' alt='movie_img' style={{
                             WebkitMaskImage: 'linear-gradient(to right, transparent, black 90%)',
                             maskImage: 'linear-gradient(to right, transparent, black 50%)'
                         }} />
                         <div className='xl:absolute xl:inset-8  space-y-5 xl:w-1/3'>
                             <div className='xl:pt-40'>
                                 <div className='flex pb-7'>
-                                    <p className='text-4xl text-white'>{item.movies.title}</p>
+                                    <p className='text-4xl text-white'>{props.movies.title}</p>
 
                                 </div>
                                 {detail && detail.movie && (
@@ -61,11 +70,11 @@ export default function Details(item) {
                                         ))}
                                     </div>)}
                                 <div className=' pt-1 text-white'>
-                                    {new Date(item.movies.release_date).getFullYear()}
+                                    {new Date(props.movies.release_date).getFullYear()}
                                 </div>
                             </div>
                             <div className='text-white'>
-                                {item.movies.overview}
+                                {props.movies.overview}
                             </div>
                             <div className='xl:flex hidden'>
                                 <a href="#trailer" class="bg-slate-800 relative inline-flex items-center justify-center p-3 px-4 py-2 overflow-hidden font-medium text-white transition duration-300 ease-out border-2 border-indigo-900 rounded-full shadow-md group">
@@ -89,7 +98,7 @@ export default function Details(item) {
                         {detail && detail.similarMovies && (
                             <div className='flex flex-nowrap overflow-x-auto no-scrollbar mr-5'>
                                 {detail.similarMovies.map((movie, index) =>
-                                    <div key={index}>
+                                    <div key={index} onClick={handleclick}>
                                         <div className='h-72 w-44 hover:scale-110 p-3'>
                                             <img src={movie.poster_path} className='h-full w-full object-cover' alt='movie_img'></img>
                                         </div>
