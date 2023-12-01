@@ -85,13 +85,32 @@ export default function Details(item) {
                     )}
                     {/* Similar Movies to add */}
                     <div>
+                        <p>SIMILAR MOVIES</p>
                         {detail && detail.similarMovies && (
-                            <div>
-                                {detail.similarMovies.map((movi, index) => {
-                                    <div>{movi}</div>
-                                })}
+                            <div className='flex flex-nowrap overflow-x-auto no-scrollbar mr-5'>
+                                {detail.similarMovies.map((movie, index) =>
+                                    <div key={index}>
+                                        <div className='h-72 w-44 hover:scale-110 p-3'>
+                                            <img src={movie.poster_path} className='h-full w-full object-cover' alt='movie_img'></img>
+                                        </div>
+                                        <div className='space-y-2 w-44'>
+                                            <div className='text-white'>
+                                                {movie.title}
+                                            </div>
+                                            <div className='text-white'>
+                                                {new Date(movie.release_date).getFullYear()}
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
                             </div>
                         )}
+                        {/* {detail && detail.movie && (
+                            <div className='grid grid-cols-3 gap-0 text-white w-2/3 xl:w-full'>
+                                {detail.movie.genres.map((genre, index) => (
+                                    <div key={index} className='w-fit'>{genre}</div>
+                                ))}
+                            </div>)} */}
 
                     </div>
                 </div>
