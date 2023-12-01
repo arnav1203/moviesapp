@@ -95,7 +95,7 @@ function App() {
             {f ? '' : <FavouritesList movies={newm} onSearch={handleclick} />}
             {f ? '' : <Animated movies={anim} onSearch={handleclick} />}
           </div>} />
-        <Route path='/details' element={<Details movies={click} />} />
+        <Route path='/details' element={<Details movies={click} onSearch={handleclick} />} />
       </Routes>
     </BrowserRouter>
   );
