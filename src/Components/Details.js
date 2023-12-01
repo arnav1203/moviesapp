@@ -29,6 +29,7 @@ export default function Details(item) {
                 const data = await response.json();
                 setdetail(data);
                 console.log(data.movie._id)
+                // console.log(data.similarMovies);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -83,6 +84,16 @@ export default function Details(item) {
                         </div>
                     )}
                     {/* Similar Movies to add */}
+                    <div>
+                        {detail && detail.similarMovies && (
+                            <div>
+                                {detail.similarMovies.map((movi, index) => {
+                                    <div>{movi}</div>
+                                })}
+                            </div>
+                        )}
+
+                    </div>
                 </div>
                 {/* )} */}
             </div>
