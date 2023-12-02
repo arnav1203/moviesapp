@@ -95,10 +95,10 @@ export default function Details(props) {
                     {/* Similar Movies to add */}
                     <div>
                         <p>SIMILAR MOVIES</p>
-                        {detail && detail.similarMovies && (
+                        {detail && detail.similarMoves && (
                             <div className='flex flex-nowrap overflow-x-auto no-scrollbar mr-5'>
                                 {detail.similarMovies.map((movie, index) =>
-                                    <div key={index} onClick={handleclick}>
+                                    <div key={index} onClick={handleclick(movie)}>
                                         <div className='h-72 w-44 hover:scale-110 p-3'>
                                             <img src={movie.poster_path} className='h-full w-full object-cover' alt='movie_img'></img>
                                         </div>
