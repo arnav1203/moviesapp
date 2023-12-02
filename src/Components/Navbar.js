@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import logo from './assets/search.svg'
+import mlogo from './assets/movieslogo.png'
 import { useNavigate } from 'react-router-dom';
 
 export default function Navbar({ onSearch }) {
@@ -26,10 +27,10 @@ export default function Navbar({ onSearch }) {
     }
     return (
         <div className='bg-gray-900'>
-            <div className='flex justify-between items-center p-5'>
+            <div className='flex justify-between items-center'>
                 <div>
-                    <div className='text-xl font-semibold text-white'>
-                        Website Logo
+                    <div className='text-xl font-semibold pl-6 text-white'>
+                        <img className='h-20' src={mlogo} />
                     </div>
                 </div>
                 <div className='flex md:w-2/3 justify-around items-center h-7'>
