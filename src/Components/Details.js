@@ -14,8 +14,6 @@ export default function Details(props) {
     }
 
     useEffect(() => {
-        console.log(props)
-        console.log(props.movies._id)
         const apikey = process.env.REACT_APP_XRapidAPIKey;
 
         const fetchMovies = async () => {
@@ -37,7 +35,6 @@ export default function Details(props) {
 
                 const data = await response.json();
                 setdetail(data);
-                console.log(data.movie._id)
                 // console.log(data.similarMovies);
             } catch (error) {
                 console.error('Error fetching data:', error);
