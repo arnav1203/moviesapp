@@ -35,7 +35,6 @@ export default function Details(props) {
 
                 const data = await response.json();
                 setdetail(data);
-                // console.log(data.similarMovies);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
