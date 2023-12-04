@@ -43,7 +43,7 @@ export default function Details(props) {
     }, [props])
 
     return (
-        <div className=''>
+        <div>
             <Navbar />
             <div className='no-scrollbar'>
                 {/* {props.movies.map((movie, index) => */}
