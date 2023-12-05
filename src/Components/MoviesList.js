@@ -14,7 +14,7 @@ export default function MoviesList(props) {
     }
     return (
         <div className='mt-10 ml-4'>
-            <div className='text-4xl text-white'>
+            <div className='text-4xl font-medium'>
                 Trending
             </div>
             <div className='flex flex-nowrap overflow-x-auto no-scrollbar mr-5'>
@@ -24,10 +24,10 @@ export default function MoviesList(props) {
                             <img src={movie.poster_path} className='h-full w-full object-cover' alt='movie_img'></img>
                         </div>
                         <div className='space-y-2 w-44'>
-                            <div className='text-white'>
+                            <div className='font-medium'>
                                 {movie.title}
                             </div>
-                            <div className='text-white'>
+                            <div className='font-medium'>
                                 {new Date(movie.release_date).getFullYear()}
                             </div>
                         </div>
