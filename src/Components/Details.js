@@ -46,7 +46,6 @@ export default function Details(props) {
         <div>
             <Navbar />
             <div className='no-scrollbar'>
-                {/* {props.movies.map((movie, index) => */}
                 <div className=' p-8'>
                     <div className='xl:relative'>
                         <img src={props.movies.backdrop_path} className='rounded-3xl h-full w-full object-contain' alt='movie_img' style={{
@@ -119,7 +118,6 @@ export default function Details(props) {
 
                     </div>
                 </div>
-                {/* )} */}
             </div>
         </div>
     )
