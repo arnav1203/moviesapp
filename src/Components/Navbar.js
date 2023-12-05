@@ -26,7 +26,7 @@ export default function Navbar({ onSearch }) {
         navigate('/')
     }
     return (
-        <div className='bg-gray-900'>
+        <div className='bg-gray-900 m-5 rounded-3xl'>
             <div className='flex justify-between items-center'>
                 <div>
                     <div className='text-xl font-semibold pl-6 text-white'>
