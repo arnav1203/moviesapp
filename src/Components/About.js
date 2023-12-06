@@ -20,7 +20,7 @@ export default function About() {
                         </div>
                     </div>
                     <div>
-                        <img src={logo} />
+                        <img src={logo} className='animate-floaty' />
                     </div>
                 </div>
             </div>
