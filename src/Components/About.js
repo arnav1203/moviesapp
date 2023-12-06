@@ -5,9 +5,12 @@ export default function About() {
     return (
         <div>
             <Navbar />
-            <div>
-                <div className='text-3xl text-white'>
+            <div className='p-8'>
+                <div className='text-5xl text-white'>
                     About
+                </div>
+                <div>
+
                 </div>
             </div>
         </div>
