@@ -9,6 +9,10 @@ export default function Navbar({ onSearch }) {
 
     const navigate = useNavigate();
 
+    const navabout = () => {
+        navigate('/about')
+    }
+
     const setsearch = (e) => {
         setsearchvalue(e.target.value);
     }
@@ -49,7 +53,7 @@ export default function Navbar({ onSearch }) {
                         </button>
                     </div>
                     <div className='text-lg font-semibold hidden md:flex'>
-                        <button className='bg-clip-text text-transparent bg-white hover:scale-110'>
+                        <button className='bg-clip-text text-transparent bg-white hover:scale-110' onClick={navabout}>
                             ABOUT
                         </button>
                     </div>

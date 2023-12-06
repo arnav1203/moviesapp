@@ -6,6 +6,7 @@ import MoviesList from './Components/MoviesList';
 import Animated from './Components/Animated';
 import Navbar from './Components/Navbar';
 import Details from './Components/Details';
+import About from './Components/About';
 
 
 function App() {
@@ -96,6 +97,7 @@ function App() {
             {f ? '' : <Animated movies={anim} onSearch={handleclick} />}
           </div>} />
         <Route path='/details' element={<Details movies={click} onSearch={handleclick} />} />
+        <Route path='/about' element={<About />} />
       </Routes>
     </BrowserRouter>
   );
