@@ -18,7 +18,6 @@ export default function Navbar({ onSearch }) {
     }
     const handlesearch = () => {
         onSearch(searchvalue);
-        // navigate('/')
         console.log('working');
     }
     const handlesearchbar = () => {
