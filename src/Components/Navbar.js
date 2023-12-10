@@ -43,7 +43,7 @@ export default function Navbar({ onSearch }) {
                         <form onSubmit={(event) => { event.preventDefault(); handlesearchbar(); handlesearch(); }}>
                             <label className='flex'>
                                 <input onChange={setsearch} className={`flex rounded-lg placeholder:p-2 p-1 bg-gray-200 ${searchbar ? 'flex' : 'hidden'} md:flex`} placeholder='Search' />
-                                <button type='submit' className='mx-2'><img src={logo} /></button>
+                                <button type='submit' className='mx-2'><img src={logo} alt='' /></button>
                             </label>
                         </form>
                     </div>
