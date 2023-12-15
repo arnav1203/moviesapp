@@ -39,7 +39,9 @@ function App() {
 
 
         const data = await response.json();
+
         let trending;
+
         if (searchdata) {
           trending = data.find(entry => entry.title === 'Trending Movies')
           let m = trending.movies.find(entry => entry.title.toLowerCase().includes(searchdata))
