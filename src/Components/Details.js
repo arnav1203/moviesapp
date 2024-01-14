@@ -89,7 +89,7 @@ export default function Details(props) {
                     )}
                     {/* Similar Movies to add */}
                     <div>
-                        <p>SIMILAR MOVIES</p>
+                        <p className='text-4xl text-white font-medium mt-10'>SIMILAR MOVIES</p>
                         {detail && detail.similarMovies && (
                             <div className='flex flex-nowrap overflow-x-auto no-scrollbar mr-5'>
                                 {detail.similarMovies.map((movie, index) =>
