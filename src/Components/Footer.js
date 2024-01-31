@@ -19,8 +19,9 @@ export default function Footer() {
                         </p>
                     </div>
                 </div>
-                <div>
-
+                <div className='space-x-5'>
+                    <a href='' className='text-indigo-700 hover:underline'>Contact</a>
+                    <a href='' className='text-indigo-700 hover:underline'>Terms of Service</a>
                 </div>
             </div>
         </div>
