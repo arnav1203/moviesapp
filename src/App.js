@@ -7,6 +7,7 @@ import Animated from './Components/Animated';
 import Navbar from './Components/Navbar';
 import Details from './Components/Details';
 import About from './Components/About';
+import Footer from './Components/Footer';
 
 
 function App() {
@@ -97,6 +98,7 @@ function App() {
             {<MoviesList movies={trend} onSearch={handleclick} />}
             {f ? '' : <FavouritesList movies={newm} onSearch={handleclick} />}
             {f ? '' : <Animated movies={anim} onSearch={handleclick} />}
+            {<Footer />}
           </div>} />
         <Route path='/details' element={<Details movies={click} onSearch={handleclick} />} />
         <Route path='/about' element={<About />} />
