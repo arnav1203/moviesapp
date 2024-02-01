@@ -88,7 +88,12 @@ function App() {
   const handleclick = (movie) => {
     setclick(movie);
   }
-
+  const tip = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Optional: adds smooth scrolling effect
+    });
+  };
   return (
     <BrowserRouter>
       <Routes>
@@ -98,7 +103,7 @@ function App() {
             {<MoviesList movies={trend} onSearch={handleclick} />}
             {f ? '' : <FavouritesList movies={newm} onSearch={handleclick} />}
             {f ? '' : <Animated movies={anim} onSearch={handleclick} />}
-            {<Footer />}
+            {<Footer onClick={tip} />}
           </div>} />
         <Route path='/details' element={<Details movies={click} onSearch={handleclick} />} />
         <Route path='/about' element={<About />} />

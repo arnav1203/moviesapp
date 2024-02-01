@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
 import logo from './assets/movieslogo.png'
-export default function Footer() {
+export default function Footer({ onClick }) {
     const [tp, stp] = useState(false)
+    const handle = () => {
+        if (tp == false)
+            stp(true);
+        onClick(stp);
+    }
     return (
         <div className='bg-slate-700 px-16 pb-4'>
             <div className='flex flex-wrap justify-around'>
@@ -29,7 +34,7 @@ export default function Footer() {
                 </div>
                 <div className='pt-8'>
                     <button
-                        className="border border-slate-500 text-white font-bold text-xl px-4 py-2 rounded-lg shadow-xl hover:bg-gradient-to-r from-blue-800 via-blue-500 to-cyan-400 hover:text-gray-800 transform hover:scale-92 transition-all duration-300">Top
+                        className="border border-slate-500 text-white font-bold text-xl px-4 py-2 rounded-lg shadow-xl hover:bg-gradient-to-r from-cyan-900 via-cyan-600 to-cyan-500 hover:text-gray-800 transform hover:scale-92 transition-all duration-300" onClick={handle}>Top
                     </button>
                 </div>
             </div>
