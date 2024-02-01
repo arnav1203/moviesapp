@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from './assets/movieslogo.png'
 export default function Footer() {
+    const [tp, stp] = useState(false)
     return (
         <div className='bg-slate-700 px-16 pb-4'>
             <div className='flex flex-wrap justify-around'>
