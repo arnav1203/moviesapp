@@ -91,7 +91,7 @@ function App() {
   const tip = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth' // Optional: adds smooth scrolling effect
+      behavior: 'smooth'
     });
   };
   return (
