@@ -9,8 +9,8 @@ export default function Footer() {
                         <img src={logo} className='h-36 w-36' />
                     </div>
                     <div className=' xl:w-2/3'>
-                        <div className='py-3'>
-                            <p className='text-gray-400 text-4xl'>About Us</p>
+                        <div className='pt-3'>
+                            <p className='text-gray-400 text-2xl'>About Us</p>
                         </div>
                         <div className='text-sm text-white space-y-4'>
                             <p>1HD is free tv shows streaming website with zero ads, it allows you watch tv shows online, watch tv shows online free in high quality for free. You can also download full tv shows and watch it later if you want.
