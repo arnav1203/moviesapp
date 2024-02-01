@@ -13,8 +13,9 @@ export default function Footer() {
                         <div className='pt-3'>
                             <p className='text-gray-400 text-2xl'>About Us</p>
                         </div>
-                        <div className='text-sm text-white space-y-4'>
-                            <p>1HD is free tv shows streaming website with zero ads, it allows you watch tv shows online, watch tv shows online free in high quality for free. You can also download full tv shows and watch it later if you want.
+                        <div className='text-sm text-white space-y-2'>
+                            <p>CineScopHub is free tv shows streaming website with zero ads, it allows you watch trailers of tv shows online in high quality for free.
+                                {/* You can also download full tv shows and watch it later if you want. */}
                             </p>
                             <p>
                                 This site does not store any files on our server, we only linked to the media which is hosted on 3rd party services.
