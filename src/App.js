@@ -6,6 +6,7 @@ import MoviesList from './Components/MoviesList';
 import Animated from './Components/Animated';
 import Navbar from './Components/Navbar';
 import Details from './Components/Details';
+import Contact from './Components/Contact';
 import About from './Components/About';
 import Footer from './Components/Footer';
 
@@ -107,6 +108,7 @@ function App() {
           </div>} />
         <Route path='/details' element={<Details movies={click} onSearch={handleclick} />} />
         <Route path='/about' element={<About />} />
+        <Route path='/contact' element={<Contact />} />
       </Routes>
     </BrowserRouter>
   );

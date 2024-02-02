@@ -29,7 +29,7 @@ export default function Footer({ onClick }) {
                     </div>
                 </div>
                 <div className='space-x-5 pt-8'>
-                    <a href='' className='text-indigo-600 hover:underline'>Contact</a>
+                    <a href='/contact' className='text-indigo-600 hover:underline'>Contact</a>
                     <a href='' className='text-indigo-600 hover:underline'>Terms of Service</a>
                 </div>
                 <div className='pt-8'>
