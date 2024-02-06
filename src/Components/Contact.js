@@ -8,7 +8,7 @@ export default function Contact() {
                     <h1 className='text-4xl text-white'>Contact Us</h1>
                 </div>
                 <div>
-                    <p className='text-white'>Please submit your inquiry using the form below and we will get in touch with you shortly.</p>
+                    <p className='text-white'>Please submit your enquiry using the form below and we will get in touch with you shortly.</p>
                 </div>
                 <div className='flex flex-col justify-center'>
                     <form>
