@@ -5,7 +5,7 @@ export default function Contact() {
         <div className='flex justify-center pt-24'>
             <div className='flex flex-col justify-center w-1/2'>
                 <div>
-                    <h1 className='text-4xl text-white'>Contact </h1>
+                    <h1 className='text-4xl text-white'>Contact Us</h1>
                 </div>
                 <div>
                     <p className='text-white'>Please submit your enquiry using the form below and we will get in touch with you shortly.</p>
