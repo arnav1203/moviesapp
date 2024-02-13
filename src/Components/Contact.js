@@ -18,16 +18,16 @@ export default function Contact() {
                     <div className='flex flex-col justify-center'>
                         <form className='space-y-7'>
                             <div className=' sm:w-full '>
-                                <textarea type="text" id="first_name" className="bg-zinc-700 border border-gray-300 text-gray-300 rounded-lg block w-full p-2.5" placeholder="Your email" ></textarea>
+                                <textarea type="text" id="first_name" className="bg-zinc-700 border border-gray-300 text-gray-200 rounded-lg block w-full p-2.5" placeholder="Your email" ></textarea>
 
                             </div>
                             <div className=' sm:w-full '>
-                                <textarea type="text" id="first_name" className="bg-zinc-700 border border-gray-300 text-gray-300 rounded-lg block w-full p-2.5" placeholder="Subject" ></textarea>
+                                <textarea type="text" id="first_name" className="bg-zinc-700 border border-gray-300 text-gray-200 rounded-lg block w-full p-2.5" placeholder="Subject" ></textarea>
 
                             </div>
                             <div className=' sm:w-full space-y-4'>
                                 <label className='text-white text-xl p-2'>Message:</label>
-                                <textarea type="text" id="first_name" className="bg-zinc-700 resize-y border border-gray-300 text-gray-300 rounded-lg block w-full p-2.5" placeholder="Type Here" ></textarea>
+                                <textarea type="text" id="first_name" className="bg-zinc-700 resize-y border border-gray-300 text-gray-200 rounded-lg block w-full p-2.5" placeholder="Type Here" ></textarea>
 
                             </div>
                             <div>
