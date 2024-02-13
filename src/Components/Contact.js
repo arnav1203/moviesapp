@@ -20,8 +20,8 @@ export default function Contact() {
                             <textarea type="text" id="first_name" className="bg-zinc-700 border border-gray-300 text-gray-300 rounded-lg block w-full p-2.5" placeholder="Subject" ></textarea>
 
                         </div>
-                        <div className='p-3 sm:w-full'>
-                            <label className='text-gray-400 text-xl p-2'>Message:</label>
+                        <div className='p-3 sm:w-full space-y-4'>
+                            <label className='text-white text-xl p-2'>Message:</label>
                             <textarea type="text" id="first_name" className="bg-zinc-700 resize-y border border-gray-300 text-gray-300 rounded-lg block w-full p-2.5" placeholder="Type Here" ></textarea>
 
                         </div>
