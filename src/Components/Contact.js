@@ -16,8 +16,14 @@ export default function Contact() {
         })
     }
 
-    const handlesubmit = () => {
-        console.log(data);
+    const handlesubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post('/submitform', data)
+        }
+        catch (error) {
+            console.error(error);
+        }
     }
 
     return (
