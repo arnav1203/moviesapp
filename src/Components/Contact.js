@@ -15,9 +15,11 @@ export default function Contact() {
             ...data, [e.target.name]: e.target.value
         })
     }
+
     const handlesubmit = () => {
         console.log(data);
     }
+
     return (
         <div>
             <Navbar />
