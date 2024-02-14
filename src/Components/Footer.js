@@ -12,7 +12,7 @@ export default function Footer({ onClick }) {
             <div className='flex flex-wrap justify-around'>
                 <div className='w-1/2 flex justify-around'>
                     <div>
-                        <img src={logo} className='h-36 w-36' />
+                        <img src={logo} alt='logo' className='h-36 w-36' />
                     </div>
                     <div className=' xl:w-2/3'>
                         <div className='pt-3'>
