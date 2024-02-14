@@ -3,7 +3,7 @@ import logo from './assets/movieslogo.png'
 export default function Footer({ onClick }) {
     const [tp, stp] = useState(false)
     const handle = () => {
-        if (tp == false)
+        if (tp === false)
             stp(true);
         onClick(stp);
     }
