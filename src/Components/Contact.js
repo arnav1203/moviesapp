@@ -10,7 +10,7 @@ export default function Contact() {
         message: ''
     })
 
-    const handlechange = (e) => {
+    const handlechange = () => {
         setdata({
             ...data, [e.target.name]: e.target.value
         })
