@@ -16,6 +16,10 @@ app.post('/submitform', (req, res) => {
             pass: 'your_password'
         }
     });
+
+    const mailoptions = {
+
+    }
 })
 
 
