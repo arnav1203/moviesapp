@@ -1,6 +1,16 @@
 const express = require('express')
 const cors = require('cors')
 const bodyparser = require('body-parser')
-app.use(bodyparser.json())
 const app = express()
+app.use(bodyparser.json())
 app.use(cors())
+
+app.post('/submitform', (req, res) => {
+    const { name, email, message } = req.body;
+
+})
+
+
+app.listen(8000, () => {
+    console.log('Server is running');
+})
