@@ -9,7 +9,10 @@ app.use(cors())
 app.post('/submitform', (req, res) => {
     const { name, email, message } = req.body;
 
-
+    const transport = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {}
+    })
 })
 
 
