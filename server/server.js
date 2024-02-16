@@ -1,3 +1,3 @@
 const express = require('express')
-const cors = require()
+const cors = require('cors')
 const app = express()
