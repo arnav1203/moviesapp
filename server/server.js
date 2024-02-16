@@ -21,7 +21,12 @@ app.post('/submitform', (req, res) => {
 
     }
 
-    transport.sendMail()
+    transport.sendMail(mailoptions, (error, info) => {
+        if (error) {
+            console.error(error);
+            res.status(500).send('Error sending mail')
+        }
+    })
 })
 
 
