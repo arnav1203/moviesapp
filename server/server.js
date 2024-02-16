@@ -20,6 +20,8 @@ app.post('/submitform', (req, res) => {
     const mailoptions = {
 
     }
+
+    transport.sendMail()
 })
 
 
