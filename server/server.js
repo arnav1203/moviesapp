@@ -27,7 +27,7 @@ app.post('/submitform', (req, res) => {
             res.status(500).send('Error sending mail')
         }
         else {
-            // console.log(info)
+            console.log(info)
         }
     })
 })
