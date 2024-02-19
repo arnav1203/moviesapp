@@ -27,17 +27,17 @@ function App() {
     const fetchMovies = async () => {
       const url = 'https://movies-api14.p.rapidapi.com/home';
 
-      const headers = {
-        'X-RapidAPI-Host': 'movies-api14.p.rapidapi.com',
-        'X-RapidAPI-Key': apikey,
-        'Content-Type': 'application/json',
-      };
+      // const headers = {
+      //   'X-RapidAPI-Host': 'movies-api14.p.rapidapi.com',
+      //   'X-RapidAPI-Key': apikey,
+      //   'Content-Type': 'application/json',
+      // };
 
 
       try {
         const response = await fetch(url, {
           method: 'GET',
-          headers: headers,
+          // headers: headers,
         });
 
 
