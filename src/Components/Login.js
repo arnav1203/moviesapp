@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './Navbar'
 
 export default function Login() {
+    const [details, udetails] = useState({
+        email: "",
+        password: "",
+    })
+    const submit = () => {
+
+    }
+
     return (
         <div>
             <Navbar />
