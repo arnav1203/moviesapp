@@ -29,6 +29,10 @@ export default function Navbar({ onSearch }) {
     const navhome = () => {
         navigate('/')
     }
+
+    const navlogin = () => {
+        navigate("/login")
+    }
     return (
         <div className=' bg-[#286986] m-5 rounded-3xl'>
             <div className='flex justify-between items-center'>
