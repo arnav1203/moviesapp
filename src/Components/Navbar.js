@@ -57,11 +57,11 @@ export default function Navbar({ onSearch }) {
                             ABOUT
                         </button>
                     </div>
-                    {/* <div className='text-lg font-semibold hidden md:flex'>
+                    <div className='text-lg font-semibold hidden md:flex'>
                         <button className='bg-clip-text text-transparent bg-white hover:scale-110'>
                             LOGIN
                         </button>
-                    </div> */}
+                    </div>
                 </div>
             </div>
         </div>
