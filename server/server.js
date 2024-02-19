@@ -13,7 +13,7 @@ app.post('/submitform', (req, res) => {
         service: 'gmail',
         auth: {
             user: 'your_email@gmail',
-            pass: 'your_password'
+            pass: 'your_password',
         }
     });
 
