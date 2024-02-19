@@ -6,7 +6,7 @@ export default function Login() {
         <div>
             <Navbar />
             <div className='h-screen flex justify-center items-center -mt-16'>
-                <form className='backdrop-blur bg-cyan-700/50 p-4 rounded-xl w-96'>
+                <form className='backdrop-blur bg-cyan-700/50 p-4 rounded-xl w-96' onSubmit={submit}>
                     <div className='text-4xl flex justify-center w-full m-2'>Welcome Back!</div>
                     <div className='flex justify-center text-xl text-gray-300 m-2'>Login to access your account</div>
                     <label className='flex flex-col w-full p-1' >
