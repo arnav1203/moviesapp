@@ -3,8 +3,8 @@ import Navbar from './Navbar'
 
 export default function Login() {
     const [details, udetails] = useState({
-        email: "",
-        password: "",
+        email: '',
+        password: '',
     })
 
     const uemail = (e) => {
