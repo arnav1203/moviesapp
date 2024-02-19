@@ -6,6 +6,16 @@ export default function Login() {
         email: "",
         password: "",
     })
+
+    const uemail = (e) => {
+        udetails(prev => {
+            return {
+                ...prev,
+                email: e.target.value
+            }
+        })
+    }
+
     const submit = () => {
 
     }
@@ -19,11 +29,11 @@ export default function Login() {
                     <div className='flex justify-center text-xl text-gray-300 m-2'>Login to access your account</div>
                     <label className='flex flex-col w-full p-1' >
                         <p className='text-xl flex justify-start text-white'>Email:</p>
-                        <input type='text' className='w-full rounded-md h-12 border border-gray-600 placeholder:text-gray-600 p-2' placeholder='Enter Email' />
+                        <input type='text' className='w-full rounded-md h-12 border border-gray-600 placeholder:text-gray-600 p-2' placeholder='Enter Email' onChange={uemail} />
                     </label>
                     <label className='flex flex-col w-full p-1'>
                         <p className='text-xl flex justify-start text-white'>Password:</p>
-                        <input type='password' className='w-full rounded-md h-12 border border-gray-600 placeholder:text-gray-600 p-2' placeholder='Enter password' />
+                        <input type='password' className='w-full rounded-md h-12 border border-gray-600 placeholder:text-gray-600 p-2' placeholder='Enter password' onChange={upswd} />
                     </label>
                     <div className='flex justify-center'>
                         <button className="relative mt-5 flex justify-center items-center border border-cyan-500 w-48 py-2 text-xl overflow-hidden font-medium transition-all bg-white rounded hover:bg-white group">
