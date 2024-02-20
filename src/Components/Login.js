@@ -15,14 +15,14 @@ export default function Login() {
             }
         })
     }
-    // const upswd = (e) => {
-    //     udetails(prev => {
-    //         return {
-    //             ...prev,
-    //             password: e.target.value
-    //         }
-    //     })
-    // }
+    const upswd = (e) => {
+        udetails(prev => {
+            return {
+                ...prev,
+                password: e.target.value
+            }
+        })
+    }
     const submit = () => {
 
     }
