@@ -15,6 +15,7 @@ export default function Login() {
             }
         })
     }
+
     const upswd = (e) => {
         udetails(prev => {
             return {
@@ -23,6 +24,7 @@ export default function Login() {
             }
         })
     }
+
     const submit = () => {
 
     }
