@@ -28,7 +28,11 @@ export default function Signup() {
 
     const submitform = (e) => {
         e.preventDefault();
-
+        app.post('http://localhost:8000/signup', {
+            name: `${fname} ${lname}`,
+            email: fn.email,
+            password: fn.password,
+        })
     }
 
 
