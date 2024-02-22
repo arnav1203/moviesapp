@@ -16,18 +16,19 @@ export default function Signup() {
 
     const changelname = (e) => {
         ufn(prev => ({ ...prev, lname: e.target.value }))
-    }
+    };
 
     const changemail = (e) => {
         ufn(prev => ({ ...prev, email: e.target.value }))
-    }
+    };
 
     const changepswd = (e) => {
         ufn(prev => ({ ...prev, password: e.target.value }))
-    }
+    };
 
     const submitform = (e) => {
         e.preventDefault();
+
     }
 
 
