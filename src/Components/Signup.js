@@ -14,6 +14,10 @@ export default function Signup() {
         ufn(prev => ({ ...prev, fname: e.target.value }))
     };
 
+    const changelname = (e) => {
+        ufn(prev => ({ ...prev, lname: e.target.value }))
+    }
+
     const submitform = (e) => {
         e.preventDefault();
     }
@@ -33,7 +37,7 @@ export default function Signup() {
                         </label>
                         <label className='flex flex-col w-full p-1'>
                             Last Name
-                            <input type='text' className='w-full rounded-md h-10 border border-gray-600 placeholder:text-gray-600 p-2' placeholder='Enter Last Name' required />
+                            <input type='text' className='w-full rounded-md h-10 border border-gray-600 placeholder:text-gray-600 p-2' placeholder='Enter Last Name' onChange={changelname} required />
                         </label>
                     </div>
                     <label className='flex flex-col w-full p-1'>
