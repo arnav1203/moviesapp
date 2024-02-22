@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import Navbar from './Navbar'
+import { useNavigate } from 'react-router-dom';
 
 export default function Signup() {
+
+    const navigate = useNavigate()
 
     const [fn, ufn] = useState({
         fname: '',
@@ -33,6 +36,7 @@ export default function Signup() {
             email: fn.email,
             password: fn.password,
         })
+        navi
     }
 
 
