@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './Navbar'
 
 export default function Signup() {
+
+    const [fn, ufn] = useState({
+        fname: '',
+        lname: '',
+        email: '',
+        password: '',
+    });
 
     const submitform = (e) => {
         e.preventDefault();
