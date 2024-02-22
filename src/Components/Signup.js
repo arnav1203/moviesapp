@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Navbar from './Navbar'
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 export default function Signup() {
@@ -14,7 +15,9 @@ export default function Signup() {
     });
 
     const changefname = (e) => {
-        ufn(prev => ({ ...prev, fname: e.target.value }))
+        ufn(prev => {
+            return { ...prev, fname: e.target.value }
+        })
     };
 
     const changelname = (e) => {
@@ -31,8 +34,8 @@ export default function Signup() {
 
     const submitform = (e) => {
         e.preventDefault();
-        app.post('http://localhost:8000/signup', {
-            name: `${fname} ${lname}`,
+        axios.post('http://localhost:8000/signup', {
+            name: `${fn.fname} ${fn.lname}`,
             email: fn.email,
             password: fn.password,
         })
