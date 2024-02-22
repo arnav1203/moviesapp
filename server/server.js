@@ -1,5 +1,7 @@
 const express = require('express')
 const cors = require('cors')
+const mongoose = require('mongoose')
+const UserModel = require('./model/User1')
 const nodemailer = require('nodemailer')
 const bodyparser = require('body-parser')
 const app = express()
