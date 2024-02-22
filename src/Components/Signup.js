@@ -18,6 +18,10 @@ export default function Signup() {
         ufn(prev => ({ ...prev, lname: e.target.value }))
     }
 
+    const changemail = (e) => {
+        ufn(prev => ({ ...prev, email: e.target.value }))
+    }
+
     const submitform = (e) => {
         e.preventDefault();
     }
@@ -42,7 +46,7 @@ export default function Signup() {
                     </div>
                     <label className='flex flex-col w-full p-1'>
                         Email
-                        <input type='email' required className='w-full rounded-md h-10 border border-gray-600 placeholder:text-gray-600 p-2' placeholder='Enter Email' />
+                        <input type='email' required className='w-full rounded-md h-10 border border-gray-600 placeholder:text-gray-600 p-2' placeholder='Enter Email' onChange={changemail} />
                     </label>
                     <label className='flex flex-col w-full p-1'>
                         Create new password
