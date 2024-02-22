@@ -2,11 +2,17 @@ import React from 'react'
 import Navbar from './Navbar'
 
 export default function Signup() {
+
+    const submitform = (e) => {
+        e.preventDefault();
+    }
+
+
     return (
         <div>
             <Navbar />
             <div className='flex justify-center items-center h-screen -m-16'>
-                <form className='backdrop-blur bg-cyan-700/50 p-4 rounded-xl w-96'>
+                <form className='backdrop-blur bg-cyan-700/50 p-4 rounded-xl w-96' onSubmit={submitform}>
                     <div className='text-4xl flex justify-center w-full m-2'>Join Us Today!</div>
                     <div className='flex justify-center text-xl text-gray-300 m-2'>Signup now to become a member</div>
                     <div className='flex'>
