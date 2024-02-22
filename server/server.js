@@ -7,7 +7,7 @@ const bodyparser = require('body-parser')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const app = express()
-app.use(bodyparser.json())
+app.use(express.json())
 app.use(cors())
 
 app.post('/submitform', (req, res) => {
