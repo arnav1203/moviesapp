@@ -10,6 +10,10 @@ export default function Signup() {
         password: '',
     });
 
+    const changefname = (e) => {
+        ufn(prev => ({ ...prev, fname: e.target.value }))
+    };
+
     const submitform = (e) => {
         e.preventDefault();
     }
@@ -25,7 +29,7 @@ export default function Signup() {
                     <div className='flex'>
                         <label className='flex flex-col w-full p-1'>
                             First Name
-                            <input type='text' className='w-full rounded-md h-10 border border-gray-600 placeholder:text-gray-600 p-2' placeholder='Enter First Name' required />
+                            <input type='text' className='w-full rounded-md h-10 border border-gray-600 placeholder:text-gray-600 p-2' placeholder='Enter First Name' onChange={changefname} required />
                         </label>
                         <label className='flex flex-col w-full p-1'>
                             Last Name
