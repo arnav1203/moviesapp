@@ -36,7 +36,7 @@ export default function Signup() {
             email: fn.email,
             password: fn.password,
         })
-        navi
+        navigate('/')
     }
 
 
