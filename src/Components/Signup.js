@@ -22,6 +22,10 @@ export default function Signup() {
         ufn(prev => ({ ...prev, email: e.target.value }))
     }
 
+    const changepswd = (e) => {
+        ufn(prev => ({ ...prev, password: e.target.value }))
+    }
+
     const submitform = (e) => {
         e.preventDefault();
     }
@@ -50,7 +54,7 @@ export default function Signup() {
                     </label>
                     <label className='flex flex-col w-full p-1'>
                         Create new password
-                        <input type='password' required className='w-full rounded-md h-10 border border-gray-600 placeholder:text-gray-600 p-2' placeholder='Create password' />
+                        <input type='password' required className='w-full rounded-md h-10 border border-gray-600 placeholder:text-gray-600 p-2' placeholder='Create password' onChange={changepswd} />
                     </label>
                     <div className='flex justify-center'>
                         <button className="relative mt-5 flex justify-center items-center border border-cyan-500 w-48 py-2 text-xl overflow-hidden font-medium transition-all bg-white rounded hover:bg-white group">
