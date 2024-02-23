@@ -22,6 +22,11 @@ app.post('/submit', async (req, res) => {
         Password: hashedpswd,
     })
     console.log(newUser);
+    newUser.save()
+        .then(user => {
+            console.log("User added:")
+            res.json(user);
+        })
 })
 
 app.post('/submitform', (req, res) => {
