@@ -13,6 +13,9 @@ app.use(cors())
 mongoose.connect('mongodb://127.0.0.1:27017/Employees')
 
 
+app.post('/submit', (req, res) => {
+    let user = new UserModel({ ...req.body })
+})
 
 app.post('/submitform', (req, res) => {
     const { name, email, message } = req.body;
