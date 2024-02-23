@@ -19,7 +19,7 @@ app.post('/submit', async (req, res) => {
     let newUser = new UserModel({
         Name: name,
         Email: email,
-        Password: hashedpswd
+        Password: hashedpswd,
     })
 })
 
