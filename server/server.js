@@ -16,7 +16,11 @@ mongoose.connect('mongodb://127.0.0.1:27017/Employees')
 app.post('/submit', async (req, res) => {
     const { name, email, password } = req.body;
     const hashedpswd = await bcrypt.hash(password, 10);
-    let user = new UserModel({ ...req.body })
+    let newUser = new UserModel({
+        Name: name,
+        Email: email,
+        Password: hashedpswd
+    })
 })
 
 app.post('/submitform', (req, res) => {
