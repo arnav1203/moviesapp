@@ -21,6 +21,7 @@ app.post('/submit', async (req, res) => {
         Email: email,
         Password: hashedpswd,
     })
+    console.log(newUser);
 })
 
 app.post('/submitform', (req, res) => {
