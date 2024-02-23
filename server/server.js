@@ -27,6 +27,10 @@ app.post('/submit', async (req, res) => {
             console.log("User added:")
             res.json(user);
         })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({ err: "unable to add user" });
+        })
 })
 
 app.post('/submitform', (req, res) => {
