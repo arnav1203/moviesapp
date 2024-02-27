@@ -43,9 +43,9 @@ app.post('/submitform', (req, res) => {
         }
     });
 
-    const mailoptions = {
+    // const mailoptions = {
 
-    }
+    // }
 
     transport.sendMail(mailoptions, (error, info) => {
         if (error) {
