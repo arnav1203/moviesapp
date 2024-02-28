@@ -32,31 +32,31 @@ app.post('/submit', async (req, res) => {
         })
 })
 
-app.post('/submitform', (req, res) => {
-    const { name, email, message } = req.body;
+// app.post('/submitform', (req, res) => {
+//     const { name, email, message } = req.body;
 
-    const transport = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: 'your_email@gmail',
-            pass: 'your_password',
-        }
-    });
+//     const transport = nodemailer.createTransport({
+//         service: 'gmail',
+//         auth: {
+//             user: 'your_email@gmail',
+//             pass: 'your_password',
+//         }
+//     });
 
-    // const mailoptions = {
+//     // const mailoptions = {
 
-    // }
+//     // }
 
-    transport.sendMail(mailoptions, (error, info) => {
-        if (error) {
-            console.error(error);
-            res.status(500).send('Error sending mail')
-        }
-        else {
-            console.log(info)
-        }
-    })
-})
+//     transport.sendMail(mailoptions, (error, info) => {
+//         if (error) {
+//             console.error(error);
+//             res.status(500).send('Error sending mail')
+//         }
+//         else {
+//             console.log(info)
+//         }
+//     })
+// })
 
 
 app.listen(8000, () => {
