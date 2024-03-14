@@ -14,7 +14,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/Employees')
 
 
 app.post('/signup', async (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     const { name, email, password } = req.body;
     const hashedpswd = await bcrypt.hash(password, 10);
     let newUser = new UserModel({

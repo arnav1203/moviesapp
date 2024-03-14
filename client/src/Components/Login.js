@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
 import Navbar from './Navbar'
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom'
 
 export default function Login() {
+    const navigate = useNavigate();
+
     const [details, udetails] = useState({
         email: '',
         password: '',
@@ -25,13 +29,24 @@ export default function Login() {
         })
     }
 
-    const submit = () => {
+    const submit = (e) => {
         e.preventDefault();
         axios.post('http://localhost:8000/login', {
             email: details.email,
             password: details.password
         })
+            .then(res => {
+                if (res.data === "Failed") {
+                    alert("Wrong Password")
 
+                }
+                else if (res.data === "User not found") {
+                    alert("User Not Found")
+                }
+                else {
+                    navigate('/')
+                }
+            })
     }
 
     return (
