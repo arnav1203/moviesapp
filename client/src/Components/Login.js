@@ -27,6 +27,10 @@ export default function Login() {
 
     const submit = () => {
         e.preventDefault();
+        axios.post('http://localhost:8000/login', {
+            email: details.email,
+            password: details.password
+        })
 
     }
 
