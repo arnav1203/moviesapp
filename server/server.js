@@ -1,4 +1,5 @@
 const express = require('express')
+const bodyParser = require('body-parser');
 const cors = require('cors')
 const mongoose = require('mongoose')
 const UserModel = require('./model/User1')
@@ -8,11 +9,12 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const app = express()
 app.use(cors())
-
+app.use(bodyParser.json());
 mongoose.connect('mongodb://127.0.0.1:27017/Employees')
 
 
 app.post('/signup', async (req, res) => {
+    console.log(req.body);
     const { name, email, password } = req.body;
     const hashedpswd = await bcrypt.hash(password, 10);
     let newUser = new UserModel({
