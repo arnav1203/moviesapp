@@ -12,7 +12,7 @@ app.use(cors())
 mongoose.connect('mongodb://127.0.0.1:27017/Employees')
 
 
-app.post('/submit', async (req, res) => {
+app.post('/signup', async (req, res) => {
     const { name, email, password } = req.body;
     const hashedpswd = await bcrypt.hash(password, 10);
     let newUser = new UserModel({
