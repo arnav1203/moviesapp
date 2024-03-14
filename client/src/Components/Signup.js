@@ -32,32 +32,16 @@ export default function Signup() {
         ufn(prev => ({ ...prev, password: e.target.value }))
     }
 
-    const submitform = async (e) => {
+    const submitform = (e) => {
+        console.log(`${fn.fname} ${fn.lname}`);
         e.preventDefault();
-        try {
-            const response = await fetch("http://localhost:8000/signup", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    name: `${fn.fname} ${fn.lname}`,
-                    email: fn.email,
-                    password: fn.password
-                })
-            });
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            const data = await response.json();
-            console.log(data); // You can do something with the response data here
-        } catch (error) {
-            console.error('There was a problem with the fetch operation:', error);
-        }
+        axios.post('http://localhost:8000/signup', {
+            name: `${fn.fname} ${fn.lname}`,
+            email: fn.email,
+            password: fn.password,
+        })
+        navigate('/')
     }
-
-    // navigate('/')
-
 
 
     return (
