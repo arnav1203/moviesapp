@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Navbar from './Navbar'
 import axios from 'axios';
+import logo from './assets/stickman-watching-tv.svg'
 import { useNavigate } from 'react-router-dom'
 
 export default function Login() {
@@ -76,7 +77,7 @@ export default function Login() {
                 </form>
             </div>
             <div>
-
+                <img />
             </div>
         </div>
     )
