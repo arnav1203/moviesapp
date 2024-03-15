@@ -78,7 +78,7 @@ export default function Login() {
                     </form>
                 </div>
                 <div className='w-80'>
-                    <img alt='logo' src={logo} />
+                    <img alt='logo' src={logo} className='animate-floaty' />
                 </div>
             </div>
         </div>
