@@ -34,6 +34,10 @@ app.post('/signup', async (req, res) => {
         })
 })
 
+app.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+})
+
 app.post('/submitform', (req, res) => {
     const { name, email, message } = req.body;
 

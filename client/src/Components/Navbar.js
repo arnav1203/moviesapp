@@ -51,7 +51,7 @@ export default function Navbar({ onSearch }) {
                             </label>
                         </form>
                     </div>
-                    <div className='text-lg font-semibold hidden md:flex '>
+                    <div className='text-lg font-semibold hidden md:flex'>
                         <button className='bg-clip-text text-transparent bg-white hover:scale-110' onClick={navhome}>
                             HOME
                         </button>
