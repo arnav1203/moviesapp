@@ -40,6 +40,7 @@ app.post('/login', async (req, res) => {
         const check = await UserModel.findOne({ Email: email })
         console.log(check)
         if (check) {
+            const storedhash = check.Password;
 
         }
     }
