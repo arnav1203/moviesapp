@@ -41,7 +41,7 @@ app.post('/login', async (req, res) => {
         console.log(check)
         if (check) {
             const storedhash = check.Password;
-
+            const p = await bcrypt.compare(password, storedhash);
         }
     }
     catch {
