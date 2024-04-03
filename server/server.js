@@ -34,6 +34,8 @@ app.post('/signup', async (req, res) => {
         })
 })
 
+let mail;
+
 app.post('/login', async (req, res) => {
     const { email, password } = req.body;
     try {
@@ -42,6 +44,14 @@ app.post('/login', async (req, res) => {
         if (check) {
             const storedhash = check.Password;
             const p = await bcrypt.compare(password, storedhash);
+            if (p) {
+                mail = check;
+                const jwtPayLoad = {
+                    id: check._id,
+                    username: check.Name,
+                    email: check.Email,
+                }
+            }
         }
     }
     catch {
