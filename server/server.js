@@ -51,11 +51,19 @@ app.post('/login', async (req, res) => {
                     username: check.Name,
                     email: check.Email,
                 }
+                res.json("Success");
+            }
+            else {
+                res.json("Failed");
             }
         }
+        else {
+            res.json("User not Found");
+        }
     }
-    catch {
-
+    catch (error) {
+        console.log(error);
+        res.json(error);
     }
 })
 
