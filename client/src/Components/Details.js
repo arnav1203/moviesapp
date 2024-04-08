@@ -59,9 +59,9 @@ export default function Details(props) {
 
                                 </div>
                                 {detail && detail.movie && (
-                                    <div className='grid grid-cols-3 gap-0 text-white w-2/3 xl:w-full'>
+                                    <div className='flex flex-wrap md:space-x-3 text-white w-2/3 xl:w-full'>
                                         {detail.movie.genres.map((genre, index) => (
-                                            <div key={index} className='w-fit'>{genre}</div>
+                                            <div key={index} className=''>{genre}</div>
                                         ))}
                                     </div>)}
                                 <div className=' pt-1 text-white'>

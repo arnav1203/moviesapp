@@ -73,7 +73,7 @@ export default function Login() {
                                 </div>
                             </button>
                         </div>
-                        <div className='flex justify-center p-3'><span>Not a member?</span><a href='/Signup' className='text-indigo-500 hover:underline'>Signup Here</a></div>
+                        <div className='flex justify-center p-3'><span>Not a member?</span><a href='/Signup' className='text-indigo-400 hover:underline font-medium'>Signup Here</a></div>
 
                     </form>
                 </div>

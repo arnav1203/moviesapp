@@ -28,21 +28,22 @@ function App() {
     const fetchMovies = async () => {
       const url = 'https://movies-api14.p.rapidapi.com/home';
 
-      // const headers = {
-      //   'X-RapidAPI-Host': 'movies-api14.p.rapidapi.com',
-      //   'X-RapidAPI-Key': apikey,
-      //   'Content-Type': 'application/json',
-      // };
+      const headers = {
+        'X-RapidAPI-Host': 'movies-api14.p.rapidapi.com',
+        'X-RapidAPI-Key': apikey,
+        'Content-Type': 'application/json',
+      };
 
 
       try {
         const response = await fetch(url, {
           method: 'GET',
-          // headers: headers,
+          headers: headers,
         });
 
 
         const data = await response.json();
+        console.log(data);
 
         let trending;
 
@@ -100,6 +101,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path='/' element={<Login />} />
         <Route
           path='/home' element={<div>
             <Navbar onSearch={handlesearch} />
@@ -111,7 +113,6 @@ function App() {
         <Route path='/details' element={<Details movies={click} onSearch={handleclick} />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
-        <Route path='/' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
       </Routes>
     </BrowserRouter>
