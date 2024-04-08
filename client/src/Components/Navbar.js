@@ -31,7 +31,7 @@ export default function Navbar({ onSearch }) {
     }
 
     const navlogin = () => {
-        navigate("/login")
+        navigate("/")
     }
     return (
         <div className=' bg-[#286986] m-5 rounded-3xl'>

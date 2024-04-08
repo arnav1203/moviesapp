@@ -36,7 +36,7 @@ app.post('/signup', async (req, res) => {
 
 let mail;
 
-app.post('/', async (req, res) => {
+app.post('/login', async (req, res) => {
     const { email, password } = req.body;
     try {
         const check = await UserModel.findOne({ Email: email })
