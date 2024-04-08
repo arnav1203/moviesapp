@@ -45,7 +45,7 @@ export default function Login() {
                     alert("User Not Found")
                 }
                 else {
-                    navigate('/')
+                    navigate('/home')
                 }
             })
     }

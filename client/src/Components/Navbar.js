@@ -27,7 +27,7 @@ export default function Navbar({ onSearch }) {
             setsearchbar(false);
     }
     const navhome = () => {
-        navigate('/')
+        navigate('/home')
     }
 
     const navlogin = () => {

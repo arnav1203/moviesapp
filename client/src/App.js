@@ -101,7 +101,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route
-          path='/' element={<div>
+          path='/home' element={<div>
             <Navbar onSearch={handlesearch} />
             {<MoviesList movies={trend} onSearch={handleclick} />}
             {f ? '' : <FavouritesList movies={newm} onSearch={handleclick} />}
@@ -111,7 +111,7 @@ function App() {
         <Route path='/details' element={<Details movies={click} onSearch={handleclick} />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
       </Routes>
     </BrowserRouter>
