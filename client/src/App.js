@@ -15,6 +15,7 @@ import Footer from './Components/Footer';
 
 function App() {
   const [searchdata, setsearchdata] = useState('')
+  const [typedata, settypedata] = useState('')
 
   const [trend, settrend] = useState([]);
   const [newm, setnewm] = useState([]);
@@ -46,6 +47,24 @@ function App() {
         console.log(data);
 
         let trending;
+
+        if (typedata) {
+          // console.log(typedata);
+          trending = data.find(entry => entry.title === 'Trending Movies')
+          let m = trending.movies.find(entry => entry.title.toLowerCase().includes(typedata))
+          if (!m) {
+            trending = data.find(entry => entry.title === 'New Movies')
+            m = trending.movies.find(entry => entry.title.toLowerCase().includes(typedata))
+          }
+          if (!m) {
+            trending = data.find(entry => entry.title === 'Best Animation Movies')
+            m = trending.movies.find(entry => entry.title.toLowerCase().includes(typedata))
+          }
+          if (m)
+            console.log(m);
+          else
+            console.log("Nothing to Display")
+        }
 
         if (searchdata) {
           trending = data.find(entry => entry.title === 'Trending Movies')
@@ -81,12 +100,17 @@ function App() {
     };
 
     fetchMovies();
-  }, [searchdata]);
+  }, [searchdata, typedata]);
 
 
   const handlesearch = (searchvalue) => {
     setsearchdata(searchvalue);
     sf(true);
+  };
+
+  const handledisp = (typedvalue) => {
+    // console.log(typedvalue);
+    settypedata(typedvalue);
   };
 
   const handleclick = (movie) => {
@@ -104,7 +128,7 @@ function App() {
         <Route path='/' element={<Login />} />
         <Route
           path='/home' element={<div>
-            <Navbar onSearch={handlesearch} />
+            <Navbar onSearch={handlesearch} onType={handledisp} />
             {<MoviesList movies={trend} onSearch={handleclick} />}
             {f ? '' : <FavouritesList movies={newm} onSearch={handleclick} />}
             {f ? '' : <Animated movies={anim} onSearch={handleclick} />}

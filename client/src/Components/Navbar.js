@@ -15,6 +15,7 @@ export default function Navbar({ onSearch, onType }) {
 
     const setsearch = (e) => {
         setsearchvalue(e.target.value);
+        // console.log(e.target.value);
         onType(e.target.value)
     }
     const handlesearch = () => {
