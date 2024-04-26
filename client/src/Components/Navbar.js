@@ -3,7 +3,7 @@ import logo from './assets/search.svg'
 import mlogo from './assets/movieslogo.png'
 import { useNavigate } from 'react-router-dom';
 
-export default function Navbar({ onSearch }) {
+export default function Navbar({ onSearch, onType }) {
     const [searchvalue, setsearchvalue] = useState('');
     const [searchbar, setsearchbar] = useState(false);
 
@@ -15,6 +15,7 @@ export default function Navbar({ onSearch }) {
 
     const setsearch = (e) => {
         setsearchvalue(e.target.value);
+        onType(e.target.value)
     }
     const handlesearch = () => {
         onSearch(searchvalue);
