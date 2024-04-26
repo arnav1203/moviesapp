@@ -51,15 +51,15 @@ function App() {
         if (typedata) {
           // console.log(typedata);
           trending = data.find(entry => entry.title === 'Trending Movies')
-          let m = trending.movies.find(entry => entry.title.toLowerCase().includes(typedata))
-          if (!m) {
-            trending = data.find(entry => entry.title === 'New Movies')
-            m = trending.movies.find(entry => entry.title.toLowerCase().includes(typedata))
-          }
-          if (!m) {
-            trending = data.find(entry => entry.title === 'Best Animation Movies')
-            m = trending.movies.find(entry => entry.title.toLowerCase().includes(typedata))
-          }
+          let m = trending.movies.filter(entry => entry.title.toLowerCase().includes(typedata))
+          // if (!m) {
+          trending = data.filter(entry => entry.title === 'New Movies')
+          m = m + trending.movies.filter(entry => entry.title.toLowerCase().includes(typedata))
+          // }
+          // if (!m) {
+          trending = data.filter(entry => entry.title === 'Best Animation Movies')
+          m = m + trending.movies.filter(entry => entry.title.toLowerCase().includes(typedata))
+          // }
           if (m)
             console.log(m);
           else
