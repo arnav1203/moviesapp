@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import logo from './assets/search.svg'
 import mlogo from './assets/movieslogo.png'
 import { useNavigate } from 'react-router-dom';
+import SearchList from './SearchList';
 
 export default function Navbar({ onSearch, onType }) {
     const [searchvalue, setsearchvalue] = useState('');
@@ -43,15 +44,19 @@ export default function Navbar({ onSearch, onType }) {
                         <img className='h-20' src={mlogo} />
                     </div>
                 </div>
-                <div className='flex md:w-2/3 justify-around items-center h-7'>
-
-                    <div className='flex justify-end'>
-                        <form onSubmit={(event) => { event.preventDefault(); handlesearchbar(); handlesearch(); }}>
-                            <label className='flex'>
-                                <input onChange={setsearch} className={`flex rounded-lg placeholder:p-2 p-1 bg-gray-200 ${searchbar ? 'flex' : 'hidden'} md:flex`} placeholder='Search' />
-                                <button type='submit' className='mx-2'><img src={logo} alt='' /></button>
-                            </label>
-                        </form>
+                <div className='flex md:w-2/3 justify-around items-center'>
+                    <div className='flex flex-col'>
+                        <div className='flex justify-end items-center'>
+                            <form onSubmit={(event) => { event.preventDefault(); handlesearchbar(); handlesearch(); }}>
+                                <label className='flex'>
+                                    <input onChange={setsearch} className={`flex rounded-lg placeholder:p-2 p-1 bg-gray-200 ${searchbar ? 'flex' : 'hidden'} md:flex`} placeholder='Search' />
+                                    <button type='submit' className='mx-2'><img src={logo} alt='' /></button>
+                                </label>
+                            </form>
+                        </div>
+                        <div className='absolute mt-10 w-48 bg-white border border-gray-300 z-50 shadow-lg rounded-lg max-h-40 overflow-y-auto no-scrollbar'>
+                            <SearchList />
+                        </div>
                     </div>
                     <div className='text-lg font-semibold hidden md:flex'>
                         <button className='bg-clip-text text-transparent bg-white hover:scale-110' onClick={navhome}>
@@ -71,5 +76,6 @@ export default function Navbar({ onSearch, onType }) {
                 </div>
             </div>
         </div>
+
     )
 }

@@ -11,11 +11,13 @@ import About from './Components/About';
 import Login from './Components/Login';
 import Signup from './Components/Signup';
 import Footer from './Components/Footer';
+import SearchList from './Components/SearchList';
 
 
 function App() {
   const [searchdata, setsearchdata] = useState('')
   const [typedata, settypedata] = useState('')
+  const [results, setresults] = useState([])
 
   const [trend, settrend] = useState([]);
   const [newm, setnewm] = useState([]);
@@ -52,16 +54,18 @@ function App() {
           // console.log(typedata);
           trending = data.find(entry => entry.title === 'Trending Movies')
           let m = trending.movies.filter(entry => entry.title.toLowerCase().includes(typedata))
-          // if (!m) {
-          trending = data.filter(entry => entry.title === 'New Movies')
-          m = m + trending.movies.filter(entry => entry.title.toLowerCase().includes(typedata))
-          // }
-          // if (!m) {
-          trending = data.filter(entry => entry.title === 'Best Animation Movies')
-          m = m + trending.movies.filter(entry => entry.title.toLowerCase().includes(typedata))
-          // }
-          if (m)
+          if (!m) {
+            trending = data.filter(entry => entry.title === 'New Movies')
+            m = m + trending.movies.filter(entry => entry.title.toLowerCase().includes(typedata))
+          }
+          if (!m) {
+            trending = data.filter(entry => entry.title === 'Best Animation Movies')
+            m = m + trending.movies.filter(entry => entry.title.toLowerCase().includes(typedata))
+          }
+          if (m) {
             console.log(m);
+            setresults(m);
+          }
           else
             console.log("Nothing to Display")
         }
@@ -129,6 +133,7 @@ function App() {
         <Route
           path='/home' element={<div>
             <Navbar onSearch={handlesearch} onType={handledisp} />
+            {/* <SearchList results={results} /> */}
             {<MoviesList movies={trend} onSearch={handleclick} />}
             {f ? '' : <FavouritesList movies={newm} onSearch={handleclick} />}
             {f ? '' : <Animated movies={anim} onSearch={handleclick} />}
