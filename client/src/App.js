@@ -132,7 +132,7 @@ function App() {
         <Route path='/' element={<Login />} />
         <Route
           path='/home' element={<div>
-            <Navbar onSearch={handlesearch} onType={handledisp} />
+            <Navbar onSearch={handlesearch} onType={handledisp} results={results} />
             {/* <SearchList results={results} /> */}
             {<MoviesList movies={trend} onSearch={handleclick} />}
             {f ? '' : <FavouritesList movies={newm} onSearch={handleclick} />}

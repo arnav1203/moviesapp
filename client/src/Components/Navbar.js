@@ -4,7 +4,7 @@ import mlogo from './assets/movieslogo.png'
 import { useNavigate } from 'react-router-dom';
 import SearchList from './SearchList';
 
-export default function Navbar({ onSearch, onType }) {
+export default function Navbar({ onSearch, onType, results }) {
     const [searchvalue, setsearchvalue] = useState('');
     const [searchbar, setsearchbar] = useState(false);
 
@@ -54,8 +54,8 @@ export default function Navbar({ onSearch, onType }) {
                                 </label>
                             </form>
                         </div>
-                        <div className='absolute mt-10 w-48 bg-white border border-gray-300 z-50 shadow-lg rounded-lg max-h-40 overflow-y-auto no-scrollbar'>
-                            <SearchList />
+                        <div className='absolute mt-10 w-96 bg-white z-50 shadow-lg rounded-lg max-h-40 overflow-y-auto no-scrollbar'>
+                            <SearchList results={results} />
                         </div>
                     </div>
                     <div className='text-lg font-semibold hidden md:flex'>
