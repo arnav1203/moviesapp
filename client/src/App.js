@@ -50,22 +50,27 @@ function App() {
 
         if (typedata) {
           // console.log(typedata);
-          trending = data.find(entry => entry.title === 'Trending Movies')
-          let m = trending.movies.filter(entry => entry.title.toLowerCase().includes(typedata))
-          if (!m) {
-            trending = data.find(entry => entry.title === 'New Movies')
-            m = m + trending.movies.filter(entry => entry.title.toLowerCase().includes(typedata))
+          if (typedata.length > 0) {
+            trending = data.find(entry => entry.title === 'Trending Movies')
+            let m = trending.movies.filter(entry => entry.title.toLowerCase().includes(typedata))
+            if (!m) {
+              trending = data.find(entry => entry.title === 'New Movies')
+              m = m + trending.movies.filter(entry => entry.title.toLowerCase().includes(typedata))
+            }
+            if (!m) {
+              trending = data.find(entry => entry.title === 'Best Animation Movies')
+              m = m + trending.movies.filter(entry => entry.title.toLowerCase().includes(typedata))
+            }
+            if (m) {
+              console.log(m);
+              setresults(m);
+            }
+            else
+              console.log("Nothing to Display")
           }
-          if (!m) {
-            trending = data.find(entry => entry.title === 'Best Animation Movies')
-            m = m + trending.movies.filter(entry => entry.title.toLowerCase().includes(typedata))
-          }
-          if (m) {
-            console.log(m);
-            setresults(m);
-          }
-          else
-            console.log("Nothing to Display")
+        }
+        else {
+          setresults();
         }
 
         if (searchdata) {
