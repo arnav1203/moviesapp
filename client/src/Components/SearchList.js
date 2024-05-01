@@ -16,7 +16,6 @@ export default function SearchList({ results }) {
         //     <h1 className='border-b-2 text-xl h-10'>SearchList</h1>
         //     <h1 className='border-b-2 text-xl h-10'>SearchList</h1>
         //     <h1 className='border-b-2 text-xl h-10'>SearchList</h1>
-
         // </div>
     )
 }
