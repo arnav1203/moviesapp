@@ -87,15 +87,14 @@ function App() {
           if (m)
             settrend([m]);
           else
-            console.log("Nothing to Display")
-
+            console.log("Nothing to Display");
         }
         else {
           trending = data.find(entry => entry.title === 'Trending Movies')
           settrend(trending.movies);
         }
-        const newmovies = data.find(entry => entry.title === 'New Movies')
-        const animated = data.find(entry => entry.title === 'Best Animation Movies')
+        const newmovies = data.find(entry => entry.title === 'New Movies');
+        const animated = data.find(entry => entry.title === 'Best Animation Movies');
 
 
         setnewm(newmovies.movies);
