@@ -1,3 +1,11 @@
+/**
+ * The Signup component in React handles user input for first name, last name, email, and password, and
+ * upon form submission, sends a POST request to a server endpoint for user signup.
+ * @returns The `Signup` component is being returned. It contains a form for user signup with fields
+ * for first name, last name, email, and password. The user can input their information and submit the
+ * form to sign up. The form includes validation for required fields. Upon submission, an HTTP POST
+ * request is made to 'http://localhost:8000/signup' with the user's information. After the request
+ */
 import React, { useState } from 'react'
 import Navbar from './Navbar'
 import axios from 'axios';
